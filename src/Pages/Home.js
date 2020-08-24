@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Footer from "../Components/Footer/Footer"
-import SideBar from "../Components/SideBar/SideBar"
+import Footer from "../components/Footer/Footer"
+import SideBar from "../components/SideBar/SideBar"
 import Heading from '../Heading/Heading';
 import Map from "../Map"
 import CovidModel from "../models/covid"

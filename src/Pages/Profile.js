@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Footer from '../Components/Footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 class Profile extends Component {
     render() {
