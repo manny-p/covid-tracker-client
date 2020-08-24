@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Footer from "../Components/Footer/Footer"
-import SideBar from "../Components/SideBar/SideBar"
+import Footer from "../components/Footer/Footer"
 import Heading from '../Heading/Heading';
-import Map from "../Map"
 import CovidModel from "../models/covid"
-
+import Container from '@material-ui/core/Container';
+import SpacingGrid from '../components/Grid';
 
 
 class Home extends Component {
@@ -35,10 +34,15 @@ class Home extends Component {
         }
       return (
           <div style={styles}>
-          <SideBar stats={this.state.covid}/>
-          <Map />
+           <Container maxWidth="lg"> 
+           <SpacingGrid stats={this.state.covid}/> 
+            </Container>
+
+        
           <Heading />
           <Footer />
+        
+      
           </div>
       )
     }
