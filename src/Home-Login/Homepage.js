@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Container from '@material-ui/core/Container';
 import Grid from '../components/Grid';
+import Nav from 'react-bootstrap/esm/Nav';
 
 class Homepage extends Component {
     render() {
