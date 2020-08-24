@@ -4,7 +4,8 @@ import {Grid, Paper} from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 6,
+    flexGrow: 1,
+
   },
   main: {
     margin: 20,
@@ -27,14 +28,14 @@ export default function SpacingGrid() {
   const classes = useStyles();
 
   return (
-    <Grid >
+    <Grid className='root'>
       <Grid item xs={12}>
         <Grid container justify="center" >
             <Grid item>
-              <Paper elevation={20} className={classes.main}> MAP placeholder</Paper>
+              <Paper elevation={20} className={classes.main} variant="elevation"> MAP placeholder</Paper>
             </Grid>
             <Grid item>
-              <Paper elevation={10} className={classes.secondary} > BorderBox Placeholder </Paper> 
+              <Paper elevation={10} className={classes.secondary} variant="elevation"> BorderBox Placeholder </Paper> 
             </Grid>
         </Grid>
       </Grid>

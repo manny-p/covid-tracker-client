@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import Grid from '../components/Grid.js'
-
+import Container from '@material-ui/core/Container';
+import Grid from '../components/Grid';
 
 class Homepage extends Component {
     render() {
         return  (
           <div> 
-          <Grid/> 
+           <Container maxWidth="lg"> 
+           <Grid/> 
+            </Container>
           </div>
  
         )
