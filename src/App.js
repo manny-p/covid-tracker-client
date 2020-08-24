@@ -1,21 +1,18 @@
-import React, {useEffect} from 'react';
-import Map from './Map'
-import {fetchCovidData} from "./Api";
-import Router from "./config/routes"
 
-// import {fetchData} from "./Api";
+import React from 'react';
+import Routes from './config/routes'
+import Header from './components/Header'
+import { withRouter}  from 'react-router-dom'; 
+
 
 function App() {
-    // useEffect(() => {
-    //     // fetchData().then(data => console.log(data));
-    //     fetchCovidData().then(response => console.log(response.data));
-    // }, []);
+  return (
+    <div>
+    <Header/>
+      <Routes/>
+    </div>
 
-    return (
-        <div className="App">
-        <Router />
-        </div>
-    );
+  );
 }
 
-export default App;
+export default App
