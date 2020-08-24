@@ -18,10 +18,12 @@ class Home extends Component {
         CovidModel.all().then(data => {
             this.setState({covid: data})
             console.log(data)
+            
         })
     }
 
     render() {
+        console.log(this.state.covid)
         const styles = {
             backgroundColor: "black", 
             position: "relative", 
@@ -35,11 +37,8 @@ class Home extends Component {
           <div style={styles}>
           <Heading />
            <Container maxWidth="lg"> 
-           <SpacingGrid stats={this.state.covid}/> 
+           <SpacingGrid covid={this.state.covid}/> 
             </Container>
-          
-        
-      
           </div>
       )
     }
