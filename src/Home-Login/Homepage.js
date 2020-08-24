@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Container from '@material-ui/core/Container';
-import Grid from '../components/Grid';
+import SpacingGrid from '../components/Grid';
 import Nav from 'react-bootstrap/esm/Nav';
 
 class Homepage extends Component {
@@ -8,7 +8,7 @@ class Homepage extends Component {
         return  (
           <div> 
            <Container maxWidth="lg"> 
-           <Grid/> 
+           <SpacingGrid/> 
             </Container>
           </div>
  

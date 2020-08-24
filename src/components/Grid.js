@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Paper} from '@material-ui/core/';
+import Map from '../components/Map'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function SpacingGrid() {
+function SpacingGrid() {
   const classes = useStyles();
 
   return (
@@ -32,7 +33,7 @@ export default function SpacingGrid() {
       <Grid item xs={12}>
         <Grid container justify="center" >
             <Grid item>
-              <Paper elevation={20} className={classes.main} variant="elevation"> MAP placeholder</Paper>
+              <Paper elevation={20} className={classes.main} variant="elevation"> <Map/> </Paper>
             </Grid>
             <Grid item>
               <Paper elevation={10} className={classes.secondary} variant="elevation"> BorderBox Placeholder </Paper> 
@@ -42,3 +43,4 @@ export default function SpacingGrid() {
     </Grid>
   );
 }
+export default SpacingGrid
