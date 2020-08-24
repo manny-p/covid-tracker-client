@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Footer from '../Components/Footer/Footer'
-import TableHeading from "../Components/TableHeading/TableHeading"
-import TableBody from "../Components/TableBody/TableBody"
-import UserSideBar from '../Components/UserSideBar/UserSideBar'
+import Footer from '../components/Footer/Footer'
+import TableHeading from "../components/TableHeading/TableHeading"
+import TableBody from "../components/TableBody/TableBody"
+import UserSideBar from '../components/UserSideBar/UserSideBar'
 
 class Profile extends Component {
     render() {

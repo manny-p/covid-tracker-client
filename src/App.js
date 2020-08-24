@@ -8,8 +8,8 @@ import { withRouter}  from 'react-router-dom';
 function App() {
   return (
     <div>
-    <Header/>
-      <Routes/>
+    <Header />
+      <Routes />
     </div>
 
   );

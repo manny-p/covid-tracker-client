@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import Footer from "../Components/Footer/Footer"
-import SideBar from "../Components/SideBar/SideBar"
+import Footer from "../components/Footer/Footer"
+import SideBar from "../components/SideBar/SideBar"
 import Heading from '../Heading/Heading';
 import Map from "../Map"
 import CovidModel from "../models/covid"
+import Container from '@material-ui/core/Container';
+import SpacingGrid from '../components/Grid';
+// import Nav from 'react-bootstrap/esm/Nav';
 
 
 
@@ -35,8 +38,10 @@ class Home extends Component {
         }
       return (
           <div style={styles}>
+          <Container maxWidth="lg"> 
           <SideBar stats={this.state.covid}/>
-          <Map />
+          <SpacingGrid/> 
+          </Container>
           <Heading />
           <Footer />
           </div>
