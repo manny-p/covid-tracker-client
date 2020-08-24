@@ -2,25 +2,26 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import classes from "./SideBar.module.css"
 import Top3 from "./TOP3/Top3"
-// {
-//     country: i.country,
-//     confirmed: i.stats.confirmed,
-//     deaths: i.stats.deaths,
-//     recovered: i.stats.recovered
-// }
- function SideBar(props) {
-     const info = props.stats.filter(i => {
-        return i.stats.confirmed > 650000
-     }).map(i => {
-         return (<Top3 
-         country={i.country} 
-         confirmed={i.stats.confirmed} 
-         deaths={i.stats.deaths}
-         recovered={i.stats.recovered} 
-         />)
-     })
-      console.log(info)
 
+ function SideBar(props) {
+    //  const info = props.filter(i => {
+    //     return i.updated > 650000
+    //  }).map(i => {
+    //      return (<Top3 
+    //      country={i.country} 
+    //      confirmed={i.updated} 
+    //      deaths={i.deaths}
+    //      recovered={i.recovered} 
+    //      />)
+    //  })
+    //   console.log(info)
+    props.covid.map(covid => {
+        console.log(covid)
+    })
+    // console.log(props.countries)
+    // for (let i = 0; i <= props.countries.length; i++) {
+    //     console.log(props.countries[i])
+    // }
     return (
         <div className={classes.SideBar}>
             <div className={classes.Section1}>
@@ -31,7 +32,7 @@ import Top3 from "./TOP3/Top3"
                 <p className={classes.D}>Deaths</p>
                 <p className={classes.R}>Recovered</p>
             </div>
-             {info}
+             {/* {info} */}
             </div>
             <div className={classes.Section2}>
             <h1>Search Output</h1>

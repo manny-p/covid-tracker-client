@@ -37,7 +37,7 @@ function SpacingGrid(props) {
               <Paper elevation={20} className={classes.main} variant="elevation"> <Map/> </Paper>
             </Grid>
             <Grid item>
-              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar stats={props.stats}/> </Paper> 
+              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper> 
             </Grid>
         </Grid>
       </Grid>
