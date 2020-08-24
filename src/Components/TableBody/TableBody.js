@@ -1,4 +1,4 @@
-import React from './node_modules/react'
+import React from 'react'
 import classes from "./TableBody.module.css"
 
 export default function TableBody() {
