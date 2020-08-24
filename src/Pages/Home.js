@@ -35,7 +35,7 @@ class Home extends Component {
         }
       return (
           <div style={styles}>
-          <SideBar stats={this.state.covid} isHome={true}/>
+          <SideBar stats={this.state.covid}/>
           <Map />
           <Heading />
           <Footer />
