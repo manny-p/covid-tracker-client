@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from "../components/Footer/Footer"
 import Heading from '../Heading/Heading';
 import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
@@ -34,13 +33,11 @@ class Home extends Component {
         }
       return (
           <div style={styles}>
+          <Heading />
            <Container maxWidth="lg"> 
            <SpacingGrid stats={this.state.covid}/> 
             </Container>
-
-        
-          <Heading />
-          <Footer />
+          
         
       
           </div>

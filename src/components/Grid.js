@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
     height: 700,
     width: 650,
     textAlign : 'center',
-    backgroundColor: 'purple',
+    backgroundColor: 'grey',
   },
   secondary: {
     margin: 20,
     height: 700,
     width: 350,
     textAlign : 'center',
-    backgroundColor: 'coral',
+    backgroundColor: 'grey',
     
   }
 }))
@@ -31,13 +31,14 @@ function SpacingGrid(props) {
 
   return (
     <Grid className='root'>
-      <Grid item xs={12}>
+      <Grid item xs={17}>
         <Grid container justify="center" >
             <Grid item>
               <Paper elevation={20} className={classes.main} variant="elevation"> <Map/> </Paper>
             </Grid>
             <Grid item>
-              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar stats={props.stats}/> </Paper> 
+              <Paper elevation={10} className={classes.secondary} variant="elevation">  </Paper> 
+              <SideBar stats={props.stats}/>
             </Grid>
         </Grid>
       </Grid>
