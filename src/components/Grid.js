@@ -38,11 +38,11 @@ function SpacingGrid(props) {
               {/* <Paper elevation={20} className={classes.main} variant="elevation"> <MapTest covid={props.covid}/> </Paper> */}
             </Grid>
 
-            <Grid item>
-              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} countryObject={props.countryObject}/> </Paper> 
+            {/* <Grid item>
+              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} /> </Paper>  */}
 
             <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
-            <SideBar covid={props.covid}/>
+            <SideBar covid={props.covid} countryObject={props.countryObject}/>
               {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
 
             </Grid>
