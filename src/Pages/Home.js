@@ -17,6 +17,7 @@ class Home extends Component {
     fetchData = () => {
         CovidModel.all().then(data => {
             this.setState({covid: data})
+            console.log('line 20 Home.js')
             console.log(data)
             
         })
@@ -33,12 +34,14 @@ class Home extends Component {
             justifyContent: "space-between",
             clear: "both"
         }
-      return (
-          <div style={styles}>
-          <Heading />
-           <Container maxWidth="lg"> 
+      return ( 
+          <div>
+          {/* <div style={styles}></div> */}
+           <div>
+           <Heading />
+           <Container maxWidth="xl" fixed disableGutters={true}> 
            <SpacingGrid covid={this.state.covid}/> 
-            </Container>
+            </Container></div>
           </div>
       )
     }
