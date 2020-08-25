@@ -4,11 +4,28 @@ import Heading from '../Heading/Heading';
 import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
+import SearchInput from "../components/SearchInput/SearchInput"
 
 
 class Home extends Component {
     state = {
-        covid: []
+        covid: [],
+        country: "",
+        countryObject: {}
+    }
+
+    handleChange = (e) => {
+        e.preventDefault()
+        this.setState({country: e.target.value})
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        CovidModel.getCountry(this.state.country)
+        .then(data => {
+            console.log(data)
+            this.setState({countryObject: data})
+        })
     }
 
     componentDidMount() {
@@ -31,15 +48,17 @@ class Home extends Component {
             minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "space-between",
             clear: "both"
         }
       return (
           <div style={styles}>
-           <Container maxWidth="lg"> 
-           <SpacingGrid covid={this.state.covid}/> 
-            </Container>
           <Heading />
+          <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
+           <Container maxWidth="lg"> 
+           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 
+            </Container>
           <Footer />    
           </div>
       )

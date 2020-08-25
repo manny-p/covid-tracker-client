@@ -6,7 +6,7 @@ function Top3(props) {
         <div>
                 <div className={classes.Section1Stat}>
                     <p>{props.country}</p>
-                    <p>{props.confirmed}</p>
+                    <p>{props.cases}</p>
                     <p>{props.deaths}</p>
                     <p>{props.recovered}</p>
                 </div> 

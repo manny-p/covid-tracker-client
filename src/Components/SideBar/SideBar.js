@@ -1,27 +1,43 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import classes from "./SideBar.module.css"
 import Top3 from "./TOP3/Top3"
 
  function SideBar(props) {
-    //  const info = props.filter(i => {
-    //     return i.updated > 650000
-    //  }).map(i => {
-    //      return (<Top3 
-    //      country={i.country} 
-    //      confirmed={i.updated} 
-    //      deaths={i.deaths}
-    //      recovered={i.recovered} 
-    //      />)
-    //  })
-    //   console.log(info)
-    props.covid.map(covid => {
-        console.log(covid)
-    })
-    // console.log(props.countries)
-    // for (let i = 0; i <= props.countries.length; i++) {
-    //     console.log(props.countries[i])
+     const [show, setShow] = useState(false)
+     const [countries, setCountries] = useState([])
+     const info = props.covid.filter(i => {
+        return i.cases > 1000000
+     }).map(i => {
+         return (<Top3 
+         country={i.country} 
+         cases={i.cases} 
+         deaths={i.deaths}
+         recovered={i.recovered} 
+         />)
+     })
+
+     const countriesList = () => {
+         setShow(!show)
+         let list = []
+         list.push(props.countryObject)
+         setCountries(list)
+         console.log(props.countryObject)
+         console.log(countries)
+    }
+
+    // useEffect(() => {
+    //     countriesList()
+    // }, [countries])
+    // const isShown = () => {
+        
     // }
+    
+    
+    
+    const country = props.countryObject.country ? (<h3>{props.countryObject.country}</h3>) : "Please Search Your Country"
+    
+
     return (
         <div className={classes.SideBar}>
             <div className={classes.Section1}>
@@ -32,11 +48,12 @@ import Top3 from "./TOP3/Top3"
                 <p className={classes.D}>Deaths</p>
                 <p className={classes.R}>Recovered</p>
             </div>
-             {/* {info} */}
+             {info}
             </div>
             <div className={classes.Section2}>
             <h1>Search Output</h1>
-                <h3>USA</h3>
+                <h3>{country}</h3>
+                <button onClick={countriesList}>Save</button>
                 <div className={classes.Container}>
                 <div className={classes.Section2Title}>
                     <p>Total Cases</p>
@@ -44,9 +61,9 @@ import Top3 from "./TOP3/Top3"
                     <p className={classes.R}>Recovered</p>
                 </div>
                 <div className={classes.Section2Stat}>
-                    <p>5,000,000</p>
-                    <p>300,000</p>
-                    <p>2,000,000</p>
+                    <p>{props.countryObject.cases}</p>
+                    <p>{props.countryObject.deaths}</p>
+                    <p>{props.countryObject.recovered}</p>
                 </div>
                 </div>
             </div>
