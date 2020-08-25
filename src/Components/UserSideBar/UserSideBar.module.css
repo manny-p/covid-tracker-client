@@ -7,10 +7,12 @@
 
   .UserSideBar {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     right: 0;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     height: calc(100vh - 56px);
     width: 20rem;
     background-color: white;
@@ -19,22 +21,47 @@
 
 .Section1 {
     display: flex;
-    margin: auto;
     justify-content: space-evenly;
+    width: 80%;
+    height: 6rem;
     flex-direction: column;
+}
+
+.Section1 h1 {
+    text-align: center;
+
+}
+
+.Email {
+    width: 6.4rem;
+    overflow: hidden;
+}
+
+.Container1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .Section2 {
     display: flex;
-    margin: auto;
-    justify-content: space-evenly;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 10rem;
+    width: 100%;
 }
 
-.Section3 {
+.Wrapper {
     display: flex;
-    flex-direction: column;
-    
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Buttons {
+    display: flex;
+    width: 6rem;
     justify-content: space-evenly;
-    
+
 }
