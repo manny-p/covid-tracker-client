@@ -5,9 +5,9 @@ import {BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
   <Router>
-    <React.StrictMode>
+    <React.Fragment>
       <App />
-    </React.StrictMode>
+    </React.Fragment>
   </Router>,
   document.getElementById('root')
 );

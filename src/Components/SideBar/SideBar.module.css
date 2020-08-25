@@ -7,14 +7,15 @@
 
 .SideBar {
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 0;
     flex-direction: column;
     align-content: flex-end;
     justify-content: space-around;
-    height: calc(100vh - 56px);
-    width: 20rem;
+    /* height: calc(100vh - 56px); */
+    height: 700px;
+    /* width: 20rem; */
     background-color: white;
 }
 
