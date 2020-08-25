@@ -1,0 +1,6 @@
+.Footer {
+    background-color: grey;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
