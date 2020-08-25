@@ -3,6 +3,7 @@ import Heading from '../Heading/Heading';
 import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
+import Footer from "../components/Footer/Footer"
 import SearchInput from "../components/SearchInput/SearchInput"
 
 
@@ -59,18 +60,7 @@ class Home extends Component {
           <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
            <Container maxWidth="lg"> 
            <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 
-            </Container>
-          <Footer />    
-
-      return ( 
-          <div>
-          {/* <div style={styles}></div> */}
-           <div>
-           <Heading />
-           <Container maxWidth="xl" fixed disableGutters={true}> 
-           <SpacingGrid covid={this.state.covid}/> 
-            </Container></div>
-
+            </Container> 
           </div>
       )
     }

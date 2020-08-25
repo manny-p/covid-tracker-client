@@ -41,13 +41,14 @@ function SpacingGrid(props) {
             <Grid item>
               <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} countryObject={props.countryObject}/> </Paper> 
 
-            <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
+            {/* <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
             <SideBar covid={props.covid}/>
               {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
 
-            </Grid>
+            {/* </Grid> */} */}
         </Grid>
       </Grid>
+    </Grid>
     </Grid>
   );
 }
