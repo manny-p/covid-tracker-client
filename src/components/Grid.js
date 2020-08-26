@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Paper} from '@material-ui/core/';
-import Map from '../components/Map/Map'
-import SideBar from "../components/SideBar/SideBar"
-import UserSideBar from "../components/UserSideBar/UserSideBar"
+import Map from './/Map/Map'
+import SideBar from ".//SideBar/SideBar"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     width: 350,
     textAlign : 'center',
     backgroundColor: 'grey',
-    
+
   }
 }))
 
