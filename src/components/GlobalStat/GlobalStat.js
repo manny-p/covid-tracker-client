@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from "./GlobalStat.module.css"
-import Ticker from "react-ticker"
+// import Ticker from "react-ticker"
 
 function GlobalStat(props) {
     console.log(props.stat)
