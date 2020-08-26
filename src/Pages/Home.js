@@ -12,7 +12,7 @@ class Home extends Component {
         covid: [],
         country: "",
         countryObject: {},
-        global: []
+        center: {}, 
     }
     
 
@@ -25,8 +25,11 @@ class Home extends Component {
         e.preventDefault()
         CovidModel.getCountry(this.state.country)
         .then(data => {
+            console.log('Line 27 from HOME')
             console.log(data)
-            this.setState({countryObject: data})
+            console.log('Line 29 from HOME')
+            console.log(data.countryInfo)
+            this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}})
         })
     }
 
@@ -62,7 +65,7 @@ class Home extends Component {
           <GlobalStat stat={this.state.covid}/>
           <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
            <Container maxWidth="xl" fixed disableGutters={true}> 
-           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 
+           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid} center={this.state.center}/> 
             </Container>
                 </div> )
     }
