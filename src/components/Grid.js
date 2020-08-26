@@ -6,7 +6,8 @@ import SideBar from ".//SideBar/SideBar"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+     flexGrow: 1,
+    
 
   },
   main: {
@@ -41,13 +42,20 @@ function SpacingGrid(props) {
             {/* <Grid item>
               <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} /> </Paper>  */}
 
+<<<<<<< HEAD
             <Grid item xl={4} lg={4} md={4} sm={4} xs={11}>
             <SideBar covid={props.covid} countryObject={props.countryObject}/>
+=======
+            <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
+            <SideBar covid={props.covid} countryObject={props.countryObject}/> <br />
+            
+>>>>>>> 81f2555b7ef7708122b210d8dd6c04e8ea98aedb
               {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
 
-            </Grid>
+            {/* </Grid> */} 
         </Grid>
       </Grid>
+    </Grid>
     </Grid>
   );
 }
