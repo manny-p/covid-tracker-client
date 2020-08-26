@@ -41,6 +41,11 @@ class Home extends Component {
             console.log(data)
             
         })
+        CovidModel.global().then(data => {
+            this.setState({global: data})
+            console.log('line 20 Home.js')
+            console.log(data)
+        })    
     }
     
 
