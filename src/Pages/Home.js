@@ -4,14 +4,17 @@ import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
 import SearchInput from "../components/SearchInput/SearchInput"
+import GlobalStat from "../components/GlobalStat/GlobalStat"
 
 
 class Home extends Component {
     state = {
         covid: [],
         country: "",
-        countryObject: {}
+        countryObject: {},
+        global: []
     }
+    
 
     handleChange = (e) => {
         e.preventDefault()
@@ -39,24 +42,24 @@ class Home extends Component {
             
         })
     }
+    
 
     render() {
         console.log(this.state.covid)
         const styles = {
-            backgroundColor: "black", 
+            backgroundColor: "#16161A", 
             position: "relative", 
-            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            clear: "both"
+            
         }
 
       return (
-        <div>
-        <div style={styles}></div>
+        <div style={styles}>
           <Heading />
+          <GlobalStat stat={this.state.covid}/>
           <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
            <Container maxWidth="xl" fixed disableGutters={true}> 
            <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 

@@ -26,12 +26,12 @@ import Top3 from "./TOP3/Top3"
          console.log(countries)
     }
 
-    // useEffect(() => {
-    //     countriesList()
-    // }, [countries])
-    // const isShown = () => {
+    useEffect(() => {
+        countriesList()
+    }, [])
+    const isShown = () => {
         
-    // }
+    }
     
     
     
@@ -53,7 +53,7 @@ import Top3 from "./TOP3/Top3"
             <div className={classes.Section2}>
             <h1>Search Output</h1>
                 <h3>{country}</h3>
-                <button onClick={countriesList}>Save</button>
+                <button onClick={countriesList} className={classes.Button}>Save</button>
                 <div className={classes.Container}>
                 <div className={classes.Section2Title}>
                     <p>Total Cases</p>
