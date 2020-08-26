@@ -34,14 +34,14 @@ function SpacingGrid(props) {
       <Grid item lg={12} xs={12}>
         <Grid container={true}  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
             <Grid item xl={8} lg={8} md={8} sm={8} xs={11}>
-            <Map covid={props.covid}/>
+            <Map covid={props.covid} center={props.center}/>
               {/* <Paper elevation={20} className={classes.main} variant="elevation"> <MapTest covid={props.covid}/> </Paper> */}
             </Grid>
 
             {/* <Grid item>
               <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} /> </Paper>  */}
 
-            <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
+            <Grid item xl={4} lg={4} md={4} sm={4} xs={11}>
             <SideBar covid={props.covid} countryObject={props.countryObject}/>
               {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
 
