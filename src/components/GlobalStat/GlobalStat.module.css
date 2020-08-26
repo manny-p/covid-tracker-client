@@ -1,0 +1,40 @@
+.GlobalStat {
+    width: 94vw;
+    height: 3rem;
+    margin: 1rem;
+    overflow: hidden;
+    
+}
+
+.Container {
+    display: flex;
+    height: 100%;
+    width: 1505rem;
+    
+}
+
+.StatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    color: white;
+    font-size: .9rem;
+}
+
+.StatContainer span {
+    font-size: .8rem;
+}
+
+/* @keyframes anim {
+    0% {
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(-458px);
+    }
+    10% {
+        transform: translateX(-916px);
+    }
+} */

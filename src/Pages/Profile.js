@@ -3,6 +3,8 @@ import Footer from '../components/Footer/Footer'
 import TableHeading from "../components/TableHeading/TableHeading"
 import TableBody from "../components/TableBody/TableBody"
 import UserSideBar from '../components/UserSideBar/UserSideBar'
+import SpacingGrid from '../components/Grid';
+import Container from '@material-ui/core/Container';
 
 class Profile extends Component {
     render() {
@@ -35,7 +37,6 @@ class Profile extends Component {
                 <TableBody />
             </div>
             <UserSideBar />
-            <Footer />
         </div>
     )
 }
