@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Fira Sans"
 
   }
 
@@ -25,19 +26,21 @@
 
 .Section1Title {
     display: flex;
-    justify-content: space-evenly;   
+    justify-content: space-around;   
 }
 
 .Section1Stat p {
    text-align: center;
 }
 
-.Section2 h1, h3 {
+.Section2 {
     text-align: center;
 }
 
+
 .Section2Title , .Section2Stat  {
     display: flex;
+    
     flex-direction: column;
     flex-wrap: wrap;
 
@@ -54,7 +57,7 @@
 
 .Section3Title {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .Link {

@@ -3,10 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Paper} from '@material-ui/core/';
 import Map from '../components/Map/Map'
 import SideBar from "../components/SideBar/SideBar"
+import UserSideBar from "../components/UserSideBar/UserSideBar"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+     flexGrow: 1,
+    
 
   },
   main: {
@@ -38,14 +40,15 @@ function SpacingGrid(props) {
               {/* <Paper elevation={20} className={classes.main} variant="elevation"> <MapTest covid={props.covid}/> </Paper> */}
             </Grid>
 
-            <Grid item>
-              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} countryObject={props.countryObject}/> </Paper> 
+            {/* <Grid item>
+              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} /> </Paper>  */}
 
-            {/* <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
-            <SideBar covid={props.covid}/>
+            <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
+            <SideBar covid={props.covid} countryObject={props.countryObject}/> <br />
+            
               {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
 
-            {/* </Grid> */} */}
+            {/* </Grid> */} 
         </Grid>
       </Grid>
     </Grid>

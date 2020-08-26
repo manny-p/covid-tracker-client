@@ -6,12 +6,13 @@ import Footer from "./components/Footer/Footer"
 import { withRouter}  from 'react-router-dom'; 
 
 
+
 function App() {
   return (
     <div>
     <Header/>
-      <Routes/>
-      <Footer />
+    <Routes/>
+    <Footer />
     </div>
 
   );
