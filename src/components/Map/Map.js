@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import { GoogleMap, LoadScript, Marker, MarkerClusterer, InfoWindow } from '@react-google-maps/api';
-
+import './style.css'
 
 const containerStyle = {
   height: '700px'
@@ -29,10 +29,10 @@ function Map(props) {
       clicked: null
     });
     
-    const options = {
-        imagePath:
-          'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m', // so you must have m1.png, m2.png, m3.png, m4.png, m5.png and m6.png in that folder
-      }
+    // const options = {
+    //     imagePath:
+    //       'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m', 
+    //     }
 
      function handleClick(index){
       setValue({
@@ -51,12 +51,40 @@ function Map(props) {
         zoom={3}
       > 
             <MarkerClusterer
-            options={options}>
+            
+            // options={options}
+            averageCenter
+
+            minimumClusterSize={4}
+            maxZoom={15}
+            averageCenter={true}
+            // clusterClass={"cluster"}
+            styles={[{
+              // url: '/Users/olya/Documents/sei-629/projects/Covid-tracker/covid-tracker-client/public/download.png',
+              url: 'https://googlemaps.github.io/js-marker-clusterer/images/m',
+              height: 80,		
+              width: 80,	
+              color: '#DEAC23',
+              fontFamily:"Arial",	
+              padding: "10px 20px 20px",
+              textColor:"#DEAC23",
+              fontFamily:"comic sans ms",
+              textSize:15,
+              fillOpacity: 0.5,
+              background: "#DEAC23",
+              borderradius: '50%', 
+              transform:"rotate(45)",
+              animateAddingMarkers: true,
+                      
+            }]}
+            >
           {(clusterer) => props.covid.map((country, index) => (
        
-              <Marker key={index} 
+              <Marker 
+              key={index} 
               position={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
-              icon= {`http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=${country.active}|FF0000|000000`}
+              icon= {`http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|DEAC23|FFF`}
+              // icon= {`/Users/olya/Documents/sei-629/projects/Covid-tracker/covid-tracker-client/public/download.png`}
               onClick= {()=>{ handleClick(index)}}
               clusterer={clusterer}
               >
@@ -65,7 +93,7 @@ function Map(props) {
             <InfoWindow
                 key={index} 
                 visible={true}
-                position={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} >
+                 >
                 <div style={{width: 100, height: 100}}> <h2>{country.country}</h2>
                 <p> Recovered: {country.recovered}</p>
                 <p> Tests: {country.tests}</p>
