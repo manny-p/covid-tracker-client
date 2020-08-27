@@ -40,7 +40,6 @@
 
 .Section2Title , .Section2Stat  {
     display: flex;
-    
     flex-direction: column;
     flex-wrap: wrap;
 

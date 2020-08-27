@@ -1,5 +1,5 @@
 const url = `https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=0`
-const url2 = `https://disease.sh/v3/covid-19/all?yesterday=true" -H  "accept: application/json`
+const url2 = `https://disease.sh/v3/covid-19/all?yesterday=true`
 class CovidModel {
     static all = async () => {
         return await fetch(url).then(res => res.json())

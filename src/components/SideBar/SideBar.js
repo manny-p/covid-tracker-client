@@ -26,12 +26,13 @@ import Top3 from "./TOP3/Top3"
          console.log(countries)
     }
 
-    useEffect(() => {
-        countriesList()
-    }, [])
-    const isShown = () => {
+    // TODO: after backend is connected
+    // useEffect(() => {
+    //     countriesList()
+    // }, [])
+    // const isShown = () => {
         
-    }
+    // }
     
     
     
