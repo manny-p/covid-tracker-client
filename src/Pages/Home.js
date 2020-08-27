@@ -58,14 +58,13 @@ class Home extends Component {
             justifyContent: "space-between",
             
         }
-
       return (
         <div style={styles}>
-          <Heading />
-          <GlobalStat stat={this.state.covid}/>
-           
+           <Heading />
+           <Container width="100%" fixed disableGutters={true}> 
            <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid} center={this.state.center} global={this.state.global} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/> 
-            
+           </Container>
+           <GlobalStat stat={this.state.covid}/>
         </div> 
         )
     }

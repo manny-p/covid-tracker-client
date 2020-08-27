@@ -76,10 +76,7 @@
 }
 
 .tickerWrap {
-  
-  /* position: fixed;
-  top: 0; */
-  width: 100%;
+  width: 800px;
   overflow: hidden;
   height: 4rem;
   background-color: rgba(#000, 0.9); 
@@ -88,7 +85,6 @@
 }
 
 .ticker {
-
     display: inline-block;
     height: 4rem;
     line-height: 2rem;  
@@ -108,11 +104,8 @@
   }
 
   .tickerItem {
-
     display: inline-flex;
     flex-direction: column;
-    
-
     padding: 0 2rem;
     font-size: 1rem;
     color: white;   
