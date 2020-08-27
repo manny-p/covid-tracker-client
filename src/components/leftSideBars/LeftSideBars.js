@@ -10,8 +10,8 @@ function LeftSideBars(props) {
     const recovered = props.global.recovered
     
 return (
-        <div>
-            <div>
+        <div style={{width: "100%"}}>
+            <div style={{width: "100%"}}>
             <div className={classes.Categories}>
                 <div>
                     <p className={classes.CatagoryListItem1}>

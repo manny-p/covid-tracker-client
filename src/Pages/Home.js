@@ -50,12 +50,13 @@ class Home extends Component {
     render() {
         console.log(this.state.covid)
         const styles = {
-            backgroundColor: "#16161A", 
+            backgroundColor: "#3A4C8C", 
             position: "relative", 
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
+            
             
         }
       return (
