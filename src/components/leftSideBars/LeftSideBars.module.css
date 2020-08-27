@@ -20,7 +20,7 @@
     height: 12rem;
     background-color: white;
     border-radius: 1.5rem;
-    border: 5px;
+    border: 5px solid rgba(214, 214, 214, 0);
     color: black;
   }
 
@@ -28,7 +28,7 @@
     margin: 1rem;
   }
 
-  @media only screen and (max-device-width: 414px) {
+  @media only screen and (max-device-width: 100%) {
     .CatagoryListItem1, .CatagoryListItem2, .CatagoryListItem3 {
       width: 8rem;
       height: 8rem;
