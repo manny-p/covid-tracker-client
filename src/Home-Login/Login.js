@@ -1,21 +1,20 @@
 import React, { Component, useState } from 'react'
 import './auth.css';
-import { withRouter}  from 'react-router-dom'; 
 
 const styles = {
-    backgroundColor: "black", 
+    backgroundColor: "black",
     position: "relative",
-    minHeight: "100vh", 
+    minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    
+
 }
  class Register extends Component {
-  
+
     render() {
-      
+
       return (
         <div style={styles}>
             <div className='register'>
