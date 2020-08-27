@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Paper} from '@material-ui/core/';
 import Map from './/Map/Map'
 import SideBar from ".//SideBar/SideBar"
+import LeftSideBars from "./leftSideBars/LeftSideBars"
+import SearchInput from "../components/SearchInput/SearchInput"
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,20 +38,17 @@ function SpacingGrid(props) {
     <Grid className='root'>
       <Grid item lg={12} xs={12}>
         <Grid container={true}  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
-            <Grid item xl={8} lg={8} md={8} sm={8} xs={11}>
-            <Map covid={props.covid}/>
-              {/* <Paper elevation={20} className={classes.main} variant="elevation"> <MapTest covid={props.covid}/> </Paper> */}
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={11}>
+              <LeftSideBars global={props.global}/>
             </Grid>
-
-            {/* <Grid item>
-              <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid} /> </Paper>  */}
-
-            <Grid item  xl={4} lg={4} md={4} sm={4} xs={11}>
-            <SideBar covid={props.covid} countryObject={props.countryObject}/> <br />
-            
-              {/* <Paper elevation={10} className={classes.secondary} variant="elevation"> <SideBar covid={props.covid}/> </Paper>  */}
-
-            {/* </Grid> */} 
+            <Grid item xl={11} lg={11} md={11} sm={11} xs={11}>
+            <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>
+            </Grid>
+            <Grid item xl={8} lg={8} md={8} sm={8} xs={11}>
+              <Map covid={props.covid} center={props.center}/>
+            </Grid>
+            <Grid item xl={4} lg={4} md={4} sm={4} xs={11}>
+            <SideBar covid={props.covid} countryObject={props.countryObject}/>
         </Grid>
       </Grid>
     </Grid>

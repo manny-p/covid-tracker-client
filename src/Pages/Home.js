@@ -3,8 +3,8 @@ import Heading from '../Heading/Heading';
 import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
-import SearchInput from "../components/SearchInput/SearchInput"
 import GlobalStat from "../components/GlobalStat/GlobalStat"
+// import LeftSideBars from "../components/leftSideBars/LeftSideBars"
 
 
 class Home extends Component {
@@ -12,7 +12,8 @@ class Home extends Component {
         covid: [],
         country: "",
         countryObject: {},
-        global: []
+        center: {},
+        global: [] 
     }
     
 
@@ -25,27 +26,24 @@ class Home extends Component {
         e.preventDefault()
         CovidModel.getCountry(this.state.country)
         .then(data => {
-            console.log(data)
-            this.setState({countryObject: data})
+            this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}})
         })
     }
 
     componentDidMount() {
         this.fetchData()
+        this.fetchNewData()
     }
 
     fetchData = () => {
         CovidModel.all().then(data => {
-            this.setState({covid: data})
-            console.log('line 20 Home.js')
-            console.log(data)
-            
-        })
+            this.setState({covid: data})  
+        })   
+    }
+    fetchNewData = () => {
         CovidModel.global().then(data => {
             this.setState({global: data})
-            console.log('line 20 Home.js')
-            console.log(data)
-        })    
+        })   
     }
     
 
@@ -65,11 +63,11 @@ class Home extends Component {
         <div style={styles}>
           <Heading />
           <GlobalStat stat={this.state.covid}/>
-          <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
-           <Container maxWidth="xl" fixed disableGutters={true}> 
-           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 
-            </Container>
-                </div> )
+           
+           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid} center={this.state.center} global={this.state.global} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/> 
+            
+        </div> 
+        )
     }
 }
 
