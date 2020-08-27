@@ -4,8 +4,7 @@ import Routes from './config/routes'
 import Header from './components/Header'
 import Footer from "./components/Footer/Footer"
 import { withRouter}  from 'react-router-dom'; 
-
-
+require('dotenv').config()
 
 function App() {
   return (
