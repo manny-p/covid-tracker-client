@@ -120,10 +120,10 @@ function Map(props) {
                 key={index} 
                 visible={true}
                  >
-                <div style={{width: 100, height: 100}}> <h2>{country.country}</h2>
-                <p> Active Cases : {country.active} </p>
-                <p> Deaths: {country.deaths}  </p>
-                <p> Recovered: {country.active}  </p>
+                <div style={{width: 100, height: 100}}> <h3>{country.country}</h3>
+                <p style={{color: 'black'}}> Active Cases : {country.active} </p>
+                <p style={{color: '#a3000b'}}> Deaths: {country.deaths}  </p>
+                <p style={{color: '#8FF599'}}> Recovered: {country.active}  </p>
                 </div>
             </InfoWindow>))}
                </Marker>
@@ -138,16 +138,16 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={{
-          strokeColor: 'white',
+          strokeColor: 'black',
           strokeOpacity: 0.5,
           strokeWeight: 2,
-          fillColor: 'white',
+          fillColor: 'black',
           fillOpacity: 0.35,
           clickable: false,
           draggable: false,
           editable: false,
           visible: true,
-          radius: country.activePerOneMillion *50 ,
+          radius: country.activePerOneMillion * 100 ,
           zIndex: 1
           }}   
     />
@@ -159,16 +159,16 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: 'red',
+          strokeColor: '#a3000b',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: 'red',
+          fillColor: '#a3000b',
           fillOpacity: 0.25,
           clickable: false,
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.deathsPerOneMillion *50,
+          radius: country.deathsPerOneMillion *100,
           zIndex: 1
           }}   
     />
@@ -190,7 +190,7 @@ function Map(props) {
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.recoveredPerOneMillion  *50,
+          radius: country.recoveredPerOneMillion  *100,
           zIndex: 1
           }}   
     />
