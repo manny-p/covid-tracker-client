@@ -5,13 +5,14 @@ import NumberFormat from 'react-number-format'
 
 
 function LeftSideBars(props) {
-    console.log(props.global)
+    // console.log(props.global)
     const cases = props.global.cases
     const deaths = props.global.deaths
     const recovered = props.global.recovered
      
     
 return (
+    <div>
         <div style={{width: "100%"}}>
             <div style={{width: "100%"}}>
             <div className={classes.Categories}>
@@ -32,6 +33,7 @@ return (
                             <h1>Global Recovered</h1>
                             <NumberFormat value={recovered} displayType={'text'} thousandSeparator={true} />
                         </div> 
+                </div>
                 </div>
                 </div>
             </div>

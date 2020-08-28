@@ -4,7 +4,7 @@ import NumberFormat from 'react-number-format'
 // import Ticker from "react-ticker"
 
 function GlobalStat(props) {
-    console.log(props.stat)
+    // console.log(props.stat)
     const stats = props.stat.map(el => (
         <div className={classes.tickerItem}>
             <h4>{el.country}</h4>
