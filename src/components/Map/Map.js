@@ -21,7 +21,7 @@ function Map(props) {
 
     const newData  = {
       continent: props.continent, 
-      stats: props.stats, 
+      type: props.type || 'all', 
       hover: props.hover
     }
 
@@ -40,9 +40,8 @@ function Map(props) {
 
     const[status, setStatus] = useState({
       continent: props.continent,
-      stats: props.stats,
+      type: props.type,
       hover: null
-
     })
      
      function handleClick(index){
@@ -104,7 +103,8 @@ function Map(props) {
               animateAddingMarkers: true, 
             }]}
             >
-          {(clusterer) => props.covid.map((country, index) => (
+
+        {(clusterer) => props.covid.map((country, index) => (
        
               <Marker 
               key={index} 
@@ -129,8 +129,8 @@ function Map(props) {
             ))
           }
         </MarkerClusterer>
- 
-        { props.continent.map((country, index) => (
+        
+        { newData.type === 'cases' && props.continent.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}
@@ -151,7 +151,7 @@ function Map(props) {
           }}   
     />
     ))}
-    { props.continent.map((country, index) => (
+    { newData.type === 'deaths' && props.continent.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}
@@ -173,7 +173,7 @@ function Map(props) {
     />
     ))}
 
-    { props.continent.map((country, index) => (
+    { newData.type === 'recovered' && props.continent.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}

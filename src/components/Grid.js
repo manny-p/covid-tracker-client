@@ -23,7 +23,7 @@ function SpacingGrid(props) {
               covid={props.covid} 
               center={props.center} 
               continent={props.continent}   
-              stats={props.state}
+              type={props.type}
               hover={props.hover}
               />
             </Grid>

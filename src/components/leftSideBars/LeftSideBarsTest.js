@@ -11,10 +11,10 @@ function LeftSideBarsTest(props) {
     
 return (
             <div className={classes.Categories}>
-                <div onMouseOver={() => props.handleMouseHover(props.type)} value="div1">
-                    <p className={classes.CatagoryListItem1} value="p1">
-                        <div className={classes.Text1} value="div2!">
-                            <h1>Global Cases</h1>
+                <div onMouseOver={() => props.handleMouseHover(props.type) } >
+                    <p className={classes.CatagoryListItem1} >
+                        <div className={classes.Text1} >
+                            <h1>{props.type}</h1>
                             {cases} 
                         </div>
                     </p>

@@ -14,7 +14,7 @@ class Home extends Component {
         center: {},
         global: [],
         continent: [],
-        stats: 'default',
+        type: 'default',
     }
 
     handleChange = (e) => {
@@ -32,7 +32,7 @@ class Home extends Component {
 
     handleMouseHover = (type) => {
         console.log("Hover Target " , type)
-        this.setState({stats: type , hover: !null })
+        this.setState({type: type , hover: !null })
     }
     
     componentDidMount() {
@@ -81,7 +81,7 @@ class Home extends Component {
            center={this.state.center} 
            global={this.state.global} 
            continent={this.state.continent} 
-           stats={this.state.stats}
+           type={this.state.type}
            hover={this.state.hover}
            handleChange={this.handleChange} 
            handleSubmit={this.handleSubmit}
