@@ -181,11 +181,11 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: 'green',
+          strokeColor: '#8FF599',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: 'green',
-          fillOpacity: 0.25,
+          fillColor: '#8FF599',
+          fillOpacity: 0.5,
           clickable: false,
           draggable: false,
           editable: false,
