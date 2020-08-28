@@ -5,7 +5,6 @@ import UserSpacingGrid from '../components/UserSideBar/ProfileGrid';
 // import TableBody from "../components/TableBody/TableBody"
 // import UserSideBar from '../components/UserSideBar/UserSideBar'
 
-
 class Profile extends Component {
     render() {
         // const styles = {
@@ -31,7 +30,7 @@ class Profile extends Component {
             alignItems: "center",
             justifyContent: "space-between",    
         }
-        
+
 
     return (
         // <div style={styles}>
