@@ -5,18 +5,12 @@ import Map from './/Map/Map'
 import SideBar from ".//SideBar/SideBar"
 import LeftSideBars from "./leftSideBars/LeftSideBars"
 import SearchInput from "../components/SearchInput/SearchInput"
-
-
-
-const useStyles = makeStyles((theme) => ({
-  
-}))
+import LeftSideBarsTest from "./leftSideBars/LeftSideBarsTest"
+import classes from "./leftSideBars/LeftSideBars.module.css" 
 
 
 function SpacingGrid(props) {
   
-
-
   return (
     <Grid className='root'>
       <Grid item lg={12} xs={12}>
@@ -25,13 +19,39 @@ function SpacingGrid(props) {
             <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>
             </Grid>
             <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
-              <Map covid={props.covid} center={props.center}/>
+              <Map 
+              covid={props.covid} 
+              center={props.center} 
+              continent={props.continent}   
+              stats={props.state}
+              hover={props.hover}
+              />
             </Grid>
             <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
-            <SideBar covid={props.covid} countryObject={props.countryObject}/>
+            <SideBar covid={props.covid} countryObject={props.countryObject} continent={props.continent}/>
         </Grid>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={11}>
-              <LeftSideBars global={props.global}/>
+            <div className={classes.Categories} >
+              <LeftSideBarsTest 
+              className={classes.CatagoryListItem1}
+              type="cases" 
+              global={props.global.cases} 
+              handleMouseHover={props.handleMouseHover}
+              />
+              <LeftSideBarsTest 
+              className={classes.CatagoryListItem1}
+              type="deaths" 
+              global={props.global.deaths} 
+              handleMouseHover={props.handleMouseHover}
+              />
+              <LeftSideBarsTest 
+              
+              className={classes.CatagoryListItem3}
+              type="recovered" 
+              global={props.global.recovered} 
+              handleMouseHover={props.handleMouseHover}
+              />
+              </div>
             </Grid>
       </Grid>
     </Grid>
