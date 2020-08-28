@@ -3,7 +3,6 @@ import TableHeading from "../components/TableHeading/TableHeading"
 import TableBody from "../components/TableBody/TableBody"
 import UserSideBar from '../components/UserSideBar/UserSideBar'
 
-
 class Profile extends Component {
     render() {
         const styles = {
@@ -21,7 +20,7 @@ class Profile extends Component {
             flexDirection: "column",
             alignItems: "center"
         }
-        
+
 
     return (
         <div style={styles}>
