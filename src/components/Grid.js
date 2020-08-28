@@ -27,19 +27,7 @@ function SpacingGrid(props) {
             <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>
             </div>
             </Grid>
-            <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
-              <Map 
-              covid={props.covid} 
-              center={props.center} 
-              continent={props.continent}   
-              type={props.type}
-              hover={props.hover}
-              />
-            </Grid>
-            <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
-            <SideBar covid={props.covid} countryObject={props.countryObject} continent={props.continent}/>
-        </Grid>
-            <Grid item xl={12} lg={12} md={12} sm={12} xs={11}>
+            <Grid item xl={2} lg={2} md={12} sm={12} xs={11}>
             <div className={classes.Categories} >
               <LeftSideBarsTest 
               className={classes.CatagoryListItem1}
@@ -48,7 +36,7 @@ function SpacingGrid(props) {
               handleMouseHover={props.handleMouseHover}
               />
               <LeftSideBarsTest 
-              className={classes.CatagoryListItem1}
+              className={classes.CatagoryListItem2}
               type="deaths" 
               global={props.global.deaths} 
               handleMouseHover={props.handleMouseHover}
@@ -62,6 +50,18 @@ function SpacingGrid(props) {
               />
               </div>
             </Grid>
+            <Grid item xl={7} lg={7} md={8} sm={8} xs={12}>
+              <Map 
+              covid={props.covid} 
+              center={props.center} 
+              continent={props.continent}   
+              type={props.type}
+              hover={props.hover}
+              />
+            </Grid>
+            <Grid item xl={3} lg={3} md={4} sm={4} xs={12}>
+            <SideBar covid={props.covid} countryObject={props.countryObject} continent={props.continent}/>
+        </Grid>
       </Grid>
     </Grid>
     </Grid>

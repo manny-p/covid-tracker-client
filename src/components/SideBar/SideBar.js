@@ -62,7 +62,7 @@ import Modal from "./modal/Modal"
             <div className={classes.Section2}>
             <h1>Search Output</h1>
                 <h3>{country}</h3>
-                <button onClick={countriesList} className={classes.Button}>Save</button>
+                <Modal onClick={countriesList} className={classes.Button}>Save</Modal>
                 <div className={classes.Container}>
                 <div className={classes.Section2Title}>
                     <p>Total Cases</p>
@@ -80,7 +80,6 @@ import Modal from "./modal/Modal"
                 <h1>Track Your Countries</h1>
                 <SetCountries/>
             </div>
-            <Modal />
         </div>
     )
 }
