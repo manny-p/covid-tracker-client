@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import Footer from '../components/Footer/Footer'
-import TableHeading from "../components/TableHeading/TableHeading"
-import TableBody from "../components/TableBody/TableBody"
-import UserSideBar from '../components/UserSideBar/UserSideBar'
-import SpacingGrid from '../components/Grid';
 import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import {Grid, Paper} from '@material-ui/core/';
+import UserSpacingGrid from '../components/UserSideBar/ProfileGrid';
+// import TableHeading from "../components/TableHeading/TableHeading"
+// import TableBody from "../components/TableBody/TableBody"
+// import UserSideBar from '../components/UserSideBar/UserSideBar'
 
 class Profile extends Component {
     render() {
@@ -20,12 +17,20 @@ class Profile extends Component {
         //     color: "white"
         // }
         // const tableStyle = {
-        //     height: "20rem",
+        //     height: "2rem",
         //     display: "flex",
         //     flexDirection: "column",
         //     alignItems: "center"
         // }
-        
+        const styles = {
+            backgroundColor: "#3A4C8C", 
+            position: "relative", 
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-between",    
+        }
+
 
     return (
         // <div style={styles}>
@@ -40,27 +45,12 @@ class Profile extends Component {
         //     </div>
         //     <UserSideBar />
         // </div>
-        <Grid className='root'>
-        <Grid item lg={12} xs={12}>
-          <Grid container={true}  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
-              <Grid item xl={8} lg={8} md={8} sm={8} xs={11}>
-              {/* <div style={tableStyle}> */}
-                {/* <TableHeading />
-                <TableBody />
-                <TableBody />
-                <TableBody />
-                <TableBody />
-                <TableBody /> */}
-             {/* </div> */}
-              </Grid>
-              <Grid item xl={4} lg={4} md={4} sm={4} xs={11}>
-              {/* <UserSideBar /> */}
-          </Grid>
-        </Grid>
-      </Grid>
-      </Grid>
+        <div style={styles}>
+        <Container width="100%" fixed disableGutters={true}> 
+           <UserSpacingGrid /> 
+           </Container>
+        </div>
     )
-
 }
 }
 

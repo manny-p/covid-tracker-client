@@ -47,7 +47,7 @@
 } */
 
 * { box-sizing: border-box; }
-/* duration: 30s; */
+
 
 @-webkit-keyframes ticker {
   0% {
@@ -76,12 +76,14 @@
 }
 
 .tickerWrap {
-  width: 800px;
+  width: 0px;
   overflow: hidden;
   height: 4rem;
   background-color: rgba(#000, 0.9); 
   padding-left: 100%;
   box-sizing: content-box;
+
+  
 }
 
 .ticker {
@@ -91,6 +93,8 @@
     white-space: nowrap;
     padding-right: 100%;
     box-sizing: content-box;
+    
+
 
     -webkit-animation-iteration-count: infinite; 
             animation-iteration-count: infinite;
@@ -98,17 +102,19 @@
             animation-timing-function: linear;
    -webkit-animation-name: ticker;
            animation-name: ticker;
-    -webkit-animation-duration: 300s;
-            animation-duration: 300s;
+    -webkit-animation-duration: 400s;
+            animation-duration: 400s;
 
   }
 
-  .tickerItem {
+.tickerItem {
     display: inline-flex;
     flex-direction: column;
     padding: 0 2rem;
     font-size: 1rem;
-    color: white;   
+    color: white;
+       
+    
   }
 .tickerItem p {
     display: inline;
