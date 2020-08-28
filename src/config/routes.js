@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
-import Login from '../Home-Login/Login'
-import Register from '../Home-Login/Register'
+import Login from '../components/Auth/Login'
+import Register from '../components/Auth/Register'
 import Home from '../Pages/Home'
 import Profile from '../Pages/Profile'
 
