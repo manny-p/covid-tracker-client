@@ -63,7 +63,7 @@ class Home extends Component {
         console.log("Line 58 STATS")
         console.log(this.state.stats)
         const styles = {
-            backgroundColor: "#3A4C8C", 
+            backgroundColor: "#42658A", 
             position: "relative", 
             display: "flex",
             flexDirection: "column",

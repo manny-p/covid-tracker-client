@@ -17,7 +17,7 @@
     /* height: calc(100vh - 56px); */
     height: 700px;
     /* width: 20rem; */
-    background-color: #E6BA43;
+    background-color: #D7E1EA;
     border-radius: .5rem;
 }
 
@@ -88,7 +88,7 @@
     color: white;
     margin: 1rem;
     border-radius: .5rem;
-    background-color: rgb(49, 49, 121);
+    background-color: #547DA0;
 }
 
 @media only screen and (max-width: 960px) {
