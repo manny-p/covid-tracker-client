@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from "./GlobalStat.module.css"
+import NumberFormat from 'react-number-format'
 // import Ticker from "react-ticker"
 
 function GlobalStat(props) {
@@ -7,7 +8,7 @@ function GlobalStat(props) {
     const stats = props.stat.map(el => (
         <div className={classes.tickerItem}>
             <h4>{el.country}</h4>
-            <p><span>Today Cases: </span>{el.todayCases}</p>
+            <p><span>Today Cases: </span><NumberFormat value={el.todayCases} displayType={'text'} thousandSeparator={true} /></p>
         </div>
     ))
     return (
