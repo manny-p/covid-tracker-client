@@ -2,8 +2,15 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import classes from "./SideBar.module.css"
 import Top3 from "./TOP3/Top3"
+import NumberFormat from 'react-number-format'
+import Modal from "./modal/Modal"
+
+
+    
 
  function SideBar(props) {
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
      const [show, setShow] = useState(false)
      const [countries, setCountries] = useState([])
      const info = props.covid.filter(i => {
@@ -22,8 +29,6 @@ import Top3 from "./TOP3/Top3"
          let list = []
          list.push(props.countryObject)
          setCountries(list)
-         console.log(props.countryObject)
-         console.log(countries)
     }
 
     // TODO: after backend is connected
@@ -62,9 +67,9 @@ import Top3 from "./TOP3/Top3"
                     <p className={classes.R}>Recovered</p>
                 </div>
                 <div className={classes.Section2Stat}>
-                    <p>{props.countryObject.cases}</p>
-                    <p>{props.countryObject.deaths}</p>
-                    <p>{props.countryObject.recovered}</p>
+                <NumberFormat value={props.countryObject.cases} displayType={'text'} thousandSeparator={true} />
+                <NumberFormat value={props.countryObject.deaths} displayType={'text'} thousandSeparator={true} />
+                <NumberFormat value={props.countryObject.recovered} displayType={'text'} thousandSeparator={true} />
                 </div>
                 </div>
             </div>
@@ -77,7 +82,7 @@ import Top3 from "./TOP3/Top3"
                     <p className={classes.R}>Recovered</p>
                 </div>
             </div>
-            <Link className={classes.Link} to='/auth'>Please Sign Up To Add a Country</Link>
+            <Modal />
         </div>
     )
 }
