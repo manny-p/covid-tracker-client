@@ -4,7 +4,6 @@ import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
 import GlobalStat from "../components/GlobalStat/GlobalStat"
-import Modal from "../components/SideBar/modal/Modal"
 
 
 class Home extends Component {
