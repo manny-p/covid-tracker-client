@@ -8,11 +8,6 @@ import SearchInput from "../components/SearchInput/SearchInput"
 
 
 
-const useStyles = makeStyles((theme) => ({
-  
-}))
-
-
 function SpacingGrid(props) {
   const styles = {
     display: "flex",

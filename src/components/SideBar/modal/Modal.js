@@ -23,10 +23,10 @@ import classes from "./Modal.module.css"
       const containerClass = this.state.modalOpened ? containerStyles : `${classes.ModalContainer}`
       return (
         <div>
-          <button className={`${classes.Btn}, ${classes.BtnPrimary}`} onClick={this.modalToggle}>Click Here</button>
+          <button className={`${classes.Btn}, ${classes.BtnPrimary}`} onClick={this.modalToggle}>CoVid19</button>
           
           <div className={`${containerClass}`}>
-            <div className={classes.ModalBody}>Please register your User to be able to add a county. Thank You!</div>
+            <div className={classes.ModalBody}>Please register your User to be able to add a country. Thank You!</div>
             <button className={classes.ModalFooter} onClick={this.modalToggle}>Close</button>
           </div>
           
