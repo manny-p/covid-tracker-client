@@ -83,7 +83,7 @@ function Map(props) {
             <MarkerClusterer
             // options={options}
             averageCenter
-            minimumClusterSize={4}
+            minimumClusterSize={6}
             maxZoom={15}
             averageCenter={true}
             // clusterClass={"cluster"}
@@ -91,13 +91,13 @@ function Map(props) {
               url: 'https://googlemaps.github.io/js-marker-clusterer/images/m',
               height: 80,		
               width: 80,	
-              color: '#DEAC23',
+              color: '#406AFF',
               fontFamily:"Arial",	
               padding: "10px 20px 20px",
-              textColor:"#DEAC23",
+              textColor: "#406AFF",
               fontFamily:"comic sans ms",
               textSize:15,
-              background: "#DEAC23",
+              background: "#406AFF",
               borderradius: '50%', 
               transform:"rotate(45)",
               animateAddingMarkers: true, 
@@ -109,7 +109,8 @@ function Map(props) {
               <Marker 
               key={index} 
               position={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
-              icon= {`http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|DEAC23|FFF`}
+              icon= {`http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|406AFF|FFF`}
+              opacity= {0.4}
               onClick= {()=>{ handleClick(index)}}
               clusterer={clusterer}
               >
@@ -120,9 +121,9 @@ function Map(props) {
                 visible={true}
                  >
                 <div style={{width: 100, height: 100}}> <h2>{country.country}</h2>
-                <p> Recovered: {country.recovered}</p>
-                <p> Tests: {country.tests}</p>
-                <p> Active: {country.active}</p>
+                <p> Active Cases : {country.active} </p>
+                <p> Deaths: {country.deaths}  </p>
+                <p> Recovered: {country.active}  </p>
                 </div>
             </InfoWindow>))}
                </Marker>
@@ -130,55 +131,55 @@ function Map(props) {
           }
         </MarkerClusterer>
         
-        { newData.type === 'cases' && props.continent.map((country, index) => (
+        { newData.type === 'cases' && props.covid.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}
           onUnmount={onUnmount}
-          center={{lat: (country.continentInfo.lat +5), lng: country.continentInfo.long + 10}} 
+          center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={{
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.8,
+          strokeColor: 'white',
+          strokeOpacity: 0.5,
           strokeWeight: 2,
-          fillColor: '#FF0000',
+          fillColor: 'white',
           fillOpacity: 0.35,
           clickable: false,
           draggable: false,
           editable: false,
-           visible: true,
-          radius: country.activePerOneMillion *1000,
+          visible: true,
+          radius: country.activePerOneMillion *50 ,
           zIndex: 1
           }}   
     />
     ))}
-    { newData.type === 'deaths' && props.continent.map((country, index) => (
+    { newData.type === 'deaths' && props.covid.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}
           onUnmount={onUnmount}
-          center={{lat: (country.continentInfo.lat), lng: country.continentInfo.long}} 
+          center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: 'blue',
+          strokeColor: 'red',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: 'blue',
+          fillColor: 'red',
           fillOpacity: 0.25,
           clickable: false,
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.deathsPerOneMillion *1000,
+          radius: country.deathsPerOneMillion *50,
           zIndex: 1
           }}   
     />
     ))}
 
-    { newData.type === 'recovered' && props.continent.map((country, index) => (
+    { newData.type === 'recovered' && props.covid.map((country, index) => (
           <Circle
           key={index}
           onLoad={onLoad}
           onUnmount={onUnmount}
-          center={{lat: (country.continentInfo.lat), lng: country.continentInfo.long }} 
+          center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
           strokeColor: 'green',
           strokeOpacity: 0.8,
@@ -189,7 +190,7 @@ function Map(props) {
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.recoveredPerOneMillion * 100,
+          radius: country.recoveredPerOneMillion  *50,
           zIndex: 1
           }}   
     />
