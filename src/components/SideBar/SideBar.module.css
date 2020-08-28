@@ -84,8 +84,21 @@
     color: green;
 }
 
+.Button {
+    color: white;
+    margin: 1rem;
+    border-radius: .5rem;
+    background-color: rgb(49, 49, 121);
+}
+
 @media only screen and (max-width: 960px) {
     .Section1, .Section2, .Section3 {
         font-size: .5rem;
+    }
+  }
+
+  @media only screen and (max-width: 599px) {
+    .Section1, .Section2, .Section3 {
+        font-size: 1rem;
     }
   }
