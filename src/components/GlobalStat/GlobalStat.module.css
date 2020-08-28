@@ -76,7 +76,7 @@
 }
 
 .tickerWrap {
-  width: 800px;
+  width: 0px;
   overflow: hidden;
   height: 4rem;
   background-color: rgba(#000, 0.9); 

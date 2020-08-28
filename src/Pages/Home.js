@@ -4,7 +4,8 @@ import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
 import GlobalStat from "../components/GlobalStat/GlobalStat"
-// import LeftSideBars from "../components/leftSideBars/LeftSideBars"
+import Modal from "../components/SideBar/modal/Modal"
+
 
 
 class Home extends Component {
@@ -26,7 +27,7 @@ class Home extends Component {
         e.preventDefault()
         CovidModel.getCountry(this.state.country)
         .then(data => {
-            this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}})
+        this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}})
         })
     }
 
@@ -50,14 +51,14 @@ class Home extends Component {
     render() {
         console.log(this.state.covid)
         const styles = {
-            backgroundColor: "#16161A", 
+            backgroundColor: "#3A4C8C", 
             position: "relative", 
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "space-between",
-            
+            justifyContent: "space-between",    
         }
+        
       return (
         <div style={styles}>
            <Heading />
