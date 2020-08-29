@@ -10,16 +10,32 @@ function LeftSideBarsTest(props) {
     const cases = props.global
     // const deaths = props.global.deaths
     // const recovered = props.global.recovered
+    let style = {
+        textTransform: "capitalize"
+    }
+
+    switch(props.type) {
+        case "recovered" : 
+            style.color = "green"
+            break;
+        case "deaths" :
+            style.color = "#A3000B"
+            break;
+        default :
+            style.color = "#474E85"
+    }
+    
+   
     
 return (
             <div className={classes.Categories}>
                 <div onMouseOver={() => props.handleMouseHover(props.type) } >
-                    <p className={classes.CatagoryListItem1} >
+                    <div className={classes.CatagoryListItem1} >
                         <div className={classes.Text1} >
-                            <h1 style={{color: "#A30008"}}>{props.type}</h1>
-                            <NumberFormat style={{color: "#A30008"}} value={cases} displayType={'text'} thousandSeparator={true} />
+                            <h1 style={style}>{props.type}</h1>
+                            <NumberFormat style={style} value={cases} displayType={'text'} thousandSeparator={true} />
                         </div>
-                    </p>
+                    </div>
             </div>
         </div>         
     )

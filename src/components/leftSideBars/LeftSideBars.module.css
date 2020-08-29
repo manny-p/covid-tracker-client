@@ -18,8 +18,7 @@
   /* height: calc(100vh - 56px); */
   height: 700px;
   /* width: 20rem; */
-  
-  border-radius: .5rem;
+  border-top-left-radius: .5rem;
 
 }
 

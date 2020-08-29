@@ -42,7 +42,6 @@ function SpacingGrid(props) {
               handleMouseHover={props.handleMouseHover}
               />
               <LeftSideBarsTest 
-              
               className={classes.CatagoryListItem3}
               type="recovered" 
               global={props.global.recovered} 
