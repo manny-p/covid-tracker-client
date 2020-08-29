@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react'
-import { GoogleMap, LoadScript, Marker, MarkerClusterer, InfoWindow, Polygon, Circle } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, MarkerClusterer, InfoWindow, Circle } from '@react-google-maps/api';
 import './style.css'
 
 const containerStyle = {
@@ -8,7 +8,7 @@ const containerStyle = {
 };
 
 let defaultCenter = {
-  lat: 37.09, lng: -95.712
+  lat: 8, lng: 8
 };
 
 function Map(props) {
@@ -120,10 +120,10 @@ function Map(props) {
                 key={index} 
                 visible={true}
                  >
-                <div style={{width: 100, height: 100}}> <h2>{country.country}</h2>
-                <p> Active Cases : {country.active} </p>
-                <p> Deaths: {country.deaths}  </p>
-                <p> Recovered: {country.active}  </p>
+                <div style={{width: 100, height: 100}}> <h3>{country.country}</h3>
+                <p style={{color: '#353634'}}>  <strong> Active Cases : </strong>{country.active} </p>
+                <p style={{color: '#a3000b'}}> <strong> Deaths: </strong> {country.deaths}  </p>
+                <p style={{color: '#519839'}}> <strong>Recovered: </strong> {country.active}  </p>
                 </div>
             </InfoWindow>))}
                </Marker>
@@ -138,16 +138,16 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={{
-          strokeColor: 'white',
-          strokeOpacity: 0.5,
-          strokeWeight: 2,
-          fillColor: 'white',
-          fillOpacity: 0.35,
+          strokeColor: '#2A2727',
+          strokeOpacity: 0.8,
+          strokeWeight: 5,
+          fillColor: '#2A2727',
+          fillOpacity: 0.8,
           clickable: false,
           draggable: false,
           editable: false,
           visible: true,
-          radius: country.activePerOneMillion *50 ,
+          radius: country.activePerOneMillion * 100 ,
           zIndex: 1
           }}   
     />
@@ -159,16 +159,16 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: 'red',
+          strokeColor: '#a3000b',
           strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: 'red',
+          strokeWeight: 15,
+          fillColor: '#a3000b',
           fillOpacity: 0.25,
           clickable: false,
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.deathsPerOneMillion *50,
+          radius: country.deathsPerOneMillion *100,
           zIndex: 1
           }}   
     />
@@ -181,16 +181,16 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: '#8FF599',
+          strokeColor: '#519839',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#8FF599',
+          fillColor: '#519839',
           fillOpacity: 0.5,
           clickable: false,
           draggable: false,
           editable: false,
            visible: true,
-          radius: country.recoveredPerOneMillion  *50,
+          radius: country.recoveredPerOneMillion  *100,
           zIndex: 1
           }}   
     />
