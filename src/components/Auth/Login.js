@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import "./auth.css";
 
 const styles = {
-    backgroundColor: "black",
+    backgroundColor: 'rgb(66, 101, 138)',
     position: "relative",
     minHeight: "100vh",
     display: "flex",
@@ -65,8 +65,8 @@ export default  ({history}) => {
 
     return (
         <div style={styles}>
-            <div className='register'>
-                <form className="register-form" onSubmit={handleSubmit}>
+            <div className='login'>
+                <form className="login-form" onSubmit={handleSubmit}>
                     <label htmlFor='email'>Email</label>
                     <input type="text" id='email' autoComplete="off" onChange={handleEmail}/>
                     <label htmlFor='password'>Password</label>
