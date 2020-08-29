@@ -11,25 +11,22 @@
 }
 .navigation  {
     display: flex;
-   
-  }
+}
 
-.logo img{
+i.fad {
+    color: #B03F2A;
+    opacity: 0.9;
     margin: 0 0 0 .45em;
     width: 60px;
     height: 50px;
     vertical-align: left
 }
-i.fad {
-    color: #B03F2A;
-    opacity: 0.9
-  }
 ul{ 
     display: flex;
     list-style: none; 
     margin: 0; 
     padding: 0; 
-    color:#EFEFEF;
+    
 
 }
 li{
@@ -37,7 +34,7 @@ li{
     font-size: 1.5em;
     color:#EFEFEF;
 }
-a{
+li a{
     color:#EFEFEF;
     text-decoration: none;
 }
