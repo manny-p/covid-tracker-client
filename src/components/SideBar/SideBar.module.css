@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Fira Sans";
+    font-family: 'Rubik', sans-serif;
 
   }
 
@@ -92,13 +92,10 @@
 }
 
 @media only screen and (max-width: 960px) {
-    .Section1, .Section2, .Section3 {
-        font-size: .5rem;
-    }
-  }
 
-  @media only screen and (max-width: 599px) {
     .Section1, .Section2, .Section3 {
         font-size: 1rem;
     }
   }
+
+

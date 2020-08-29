@@ -16,7 +16,7 @@ function LeftSideBarsTest(props) {
 
     switch(props.type) {
         case "recovered" : 
-            style.color = "green"
+            style.color = "#519839"
             break;
         case "deaths" :
             style.color = "#A3000B"
