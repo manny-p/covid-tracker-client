@@ -30,7 +30,7 @@ function SpacingGrid(props) {
             <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>
             </div>
             </Grid>
-            <Grid item xl={2} lg={2} md={12} sm={12} xs={11}>
+            <Grid item xl={2} lg={2} md={2} sm={3} xs={12}>
             <div className={classes.Categories} >
               <LeftSideBarsTest 
               className={classes.CatagoryListItem1}
@@ -45,7 +45,6 @@ function SpacingGrid(props) {
               handleMouseHover={props.handleMouseHover}
               />
               <LeftSideBarsTest 
-              
               className={classes.CatagoryListItem3}
               type="recovered" 
               global={props.global.recovered} 
@@ -62,7 +61,7 @@ function SpacingGrid(props) {
               hover={props.hover}
               />
             </Grid>
-            <Grid item xl={3} lg={3} md={4} sm={4} xs={12}>
+            <Grid item xl={3} lg={3} md={10} sm={11} xs={12}>
             <SideBar covid={props.covid} countryObject={props.countryObject} continent={props.continent}/>
         </Grid>
       </Grid>
