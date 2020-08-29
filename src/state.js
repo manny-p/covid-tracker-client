@@ -1,7 +1,7 @@
 import {createGlobalState} from 'react-hooks-global-state';
 
 const initialState = {
-    user: {},
+    user: null,
     token: null
 }
 

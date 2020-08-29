@@ -1,5 +1,6 @@
 import React from "react"
 import useGlobalState from "../../state"
+import useFetch from "./useFetch"
 
 // pass in country prop from sidebar
 export default ({country}) => {
@@ -40,7 +41,6 @@ export default ({country}) => {
 
     return (
         <button onClick={HandleSave}>Save</button>
-
     )
 }
 
