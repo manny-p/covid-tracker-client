@@ -1,12 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .Form {
-    /* display: flex; */
-    border: 1px solid white;
+    border: 3px solid white;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
     height: 2rem;
     width: 450px;
     padding: 0;
-    margin: 0;
+    margin: 1rem;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 0.7rem;
+    font-family: 'Open Sans';
 }
 .Input {
     height: 100%;

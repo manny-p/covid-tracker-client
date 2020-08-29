@@ -1,0 +1,124 @@
+/* .GlobalStat {
+    width: 90vw;
+    height: 3rem;
+    margin: 1rem;
+    overflow: hidden;
+    
+}
+
+.Container {
+    display: flex;
+    height: 100%;
+    width: 1505rem;
+    
+}
+
+.StatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    color: white;
+    font-size: .9rem;
+    animation: anim .5s ease-in-out infinite; 
+}
+
+.StatContainer span {
+    font-size: .8rem;
+}
+
+.ticker {
+    color: white;
+    width: 100%;
+    height: 80px;
+} */
+
+/* @keyframes anim {
+    0% {
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(-458px);
+    }
+    10% {
+        transform: translateX(-916px);
+    }
+} */
+
+* { box-sizing: border-box; }
+
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.tickerWrap {
+  width: 0px;
+  overflow: hidden;
+  height: 4rem;
+  background-color: rgba(#000, 0.9); 
+  padding-left: 100%;
+  box-sizing: content-box;
+
+  
+}
+
+.ticker {
+    display: inline-block;
+    height: 4rem;
+    line-height: 2rem;  
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    
+
+
+    -webkit-animation-iteration-count: infinite; 
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+   -webkit-animation-name: ticker;
+           animation-name: ticker;
+    -webkit-animation-duration: 400s;
+            animation-duration: 400s;
+
+  }
+
+.tickerItem {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    font-size: 1rem;
+    color: white;
+       
+    
+  }
+.tickerItem p {
+    display: inline;
+    color: white;
+}
+
+

@@ -1,4 +1,9 @@
 .Heading {
-    color: honeydew;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    justify-content: space-evenly;
+    color: #EFEFEF;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
 }
