@@ -1,4 +1,3 @@
-
 .flex-container{
     height: 80px;
     margin: 0 auto; 
@@ -26,8 +25,6 @@ ul{
     list-style: none; 
     margin: 0; 
     padding: 0; 
-    
-
 }
 li{
     padding: 20px;

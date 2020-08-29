@@ -16,7 +16,9 @@ function SpacingGrid(props) {
     alignItems: "center",
     justifyContent: "space-between",
     width: "100%",
-    height: "100%"
+    height: "100%",
+    display: "flex",
+    // minHeight: "100vh",
   }
 
   return (

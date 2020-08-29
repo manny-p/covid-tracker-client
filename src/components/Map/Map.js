@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react'
-import { GoogleMap, LoadScript, Marker, MarkerClusterer, InfoWindow, Polygon, Circle } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, MarkerClusterer, InfoWindow, Circle } from '@react-google-maps/api';
 import './style.css'
 
 const containerStyle = {
@@ -8,7 +8,7 @@ const containerStyle = {
 };
 
 let defaultCenter = {
-  lat: 37.09, lng: -95.712
+  lat: 8, lng: 8
 };
 
 function Map(props) {
@@ -121,9 +121,9 @@ function Map(props) {
                 visible={true}
                  >
                 <div style={{width: 100, height: 100}}> <h3>{country.country}</h3>
-                <p style={{color: 'black'}}> Active Cases : {country.active} </p>
-                <p style={{color: '#a3000b'}}> Deaths: {country.deaths}  </p>
-                <p style={{color: '#8FF599'}}> Recovered: {country.active}  </p>
+                <p style={{color: '#353634'}}>  <strong> Active Cases : </strong>{country.active} </p>
+                <p style={{color: '#a3000b'}}> <strong> Deaths: </strong> {country.deaths}  </p>
+                <p style={{color: '#519839'}}> <strong>Recovered: </strong> {country.active}  </p>
                 </div>
             </InfoWindow>))}
                </Marker>
@@ -138,11 +138,11 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={{
-          strokeColor: 'black',
-          strokeOpacity: 0.5,
-          strokeWeight: 2,
-          fillColor: 'black',
-          fillOpacity: 0.35,
+          strokeColor: '#2A2727',
+          strokeOpacity: 0.8,
+          strokeWeight: 5,
+          fillColor: '#2A2727',
+          fillOpacity: 0.8,
           clickable: false,
           draggable: false,
           editable: false,
@@ -161,7 +161,7 @@ function Map(props) {
           options ={ {
           strokeColor: '#a3000b',
           strokeOpacity: 0.8,
-          strokeWeight: 2,
+          strokeWeight: 15,
           fillColor: '#a3000b',
           fillOpacity: 0.25,
           clickable: false,
@@ -181,10 +181,10 @@ function Map(props) {
           onUnmount={onUnmount}
           center={{lat: (country.countryInfo.lat), lng: country.countryInfo.long}} 
           options ={ {
-          strokeColor: '#8FF599',
+          strokeColor: '#519839',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#8FF599',
+          fillColor: '#519839',
           fillOpacity: 0.5,
           clickable: false,
           draggable: false,
