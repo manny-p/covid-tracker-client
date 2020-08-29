@@ -22,7 +22,7 @@ function LeftSideBarsTest(props) {
             style.color = "#A3000B"
             break;
         default :
-            style.color = "#474E85"
+            style.color = "#353634"
     }
     
    

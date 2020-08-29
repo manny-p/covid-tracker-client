@@ -8,7 +8,7 @@
   .BtnPrimary {
     color: white;
     border-radius: .5rem;
-    background-color: #547DA0;
+    background-color: #5079A5;
   }
   
   .ModalCover {
@@ -29,7 +29,7 @@
   .ModalContainer {
     z-index: 1050;
     position: fixed;
-    border: .5rem solid rgba(106, 94, 168, 0.548);
+    border: .5rem solid #5079A5;
     border-radius: 6px;
     background: white;
     width: 600px;
@@ -67,3 +67,16 @@
     font-size: 21px;
 
   }
+
+  @media only screen and (max-width: 580px) {
+    .ModalContainer{
+      z-index: 1050;
+      width: 31rem;
+      position: fixed;
+      left: 50%;
+      top: 20%;
+      margin-left: -300px;
+      transform: translateX(50px);
+      display: none;
+    }
+}
