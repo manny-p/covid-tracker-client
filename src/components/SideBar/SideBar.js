@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import SetCountries from '../SetCountries/SetCountries'
+import CountriesList from '../SetCountries/CountriesList'
+import SaveCountry from '../SetCountries/SaveCountry'
 import classes from "./SideBar.module.css"
 import Top3 from "./TOP3/Top3"
 
@@ -54,7 +55,8 @@ import Top3 from "./TOP3/Top3"
             <div className={classes.Section2}>
             <h1>Search Output</h1>
                 <h3>{country}</h3>
-                <button onClick={countriesList} className={classes.Button}>Save</button>
+                {/*<button onClick={countriesList} className={classes.Button}>Save</button>*/}
+                <SaveCountry country={country}/>
                 <div className={classes.Container}>
                 <div className={classes.Section2Title}>
                     <p>Total Cases</p>
@@ -70,7 +72,7 @@ import Top3 from "./TOP3/Top3"
             </div>
             <div className={classes.Section3}>
                 <h1>Track Your Countries</h1>
-                <SetCountries/>
+                <CountriesList/>
             </div>
             <Link className={classes.Link} to='/auth'>Please Sign Up To Add a Country</Link>
         </div>

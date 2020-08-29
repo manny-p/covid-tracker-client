@@ -34,16 +34,16 @@ export default ({history}) => {
                 body: JSON.stringify({email, password}),
             })
 
-            // parse the token
-            const fetchData = await results.json();
+            // parse the token, save data
+            const saveData = await results.json()
 
             // higher order function
             // take the initial value of token and modify it
-            setToken(() => fetchData.token)
-            // console.log(fetchData.token)
+            setToken(() => saveData.token)
+            // console.log(saveData.token)
 
-            setUser(() => fetchData.user)
-            // console.log(fetchData.user)
+            setUser(() => saveData.user)
+            // console.log(saveData.user)
 
             history.push("/")
 

@@ -19,8 +19,8 @@ export default ({history}) => {
     const [password, setPassword] = useState("")
 
     // global state
-    const [, setToken] = useGlobalState("token")
     const [, setUser] = useGlobalState("user")
+    const [, setToken] = useGlobalState("token")
 
     const handleEmail = e => setEmail(e.target.value)
     // console.log(handleEmail)
@@ -51,10 +51,10 @@ export default ({history}) => {
             // higher order function
             // take the initial value of token and modify it
             setToken(() => fetchData.token)
-            // console.log(fetchData.token)
+            console.log(`Token: ${fetchData.token}`)
 
             setUser(() => fetchData.user)
-            // console.log(fetchData.user)
+            console.log(`User ${fetchData.user}`)
 
             history.push("/")
 
