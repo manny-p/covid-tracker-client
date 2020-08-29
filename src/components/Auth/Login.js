@@ -13,7 +13,7 @@ const styles = {
     justifyContent: "space-between",
 }
 
-export default ({history}) => {
+export default  ({history}) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
