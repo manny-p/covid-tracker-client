@@ -15,13 +15,16 @@ function SpacingGrid(props) {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "100%"
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    // minHeight: "100vh",
   }
 
   return (
     <Grid className='root'>
       <Grid item lg={12} xs={12}>
-        <Grid container={true}  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
+        <Grid container={true}   height='100%' margin-bottom=''  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
             <div style={styles}>
             <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>

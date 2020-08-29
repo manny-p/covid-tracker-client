@@ -74,7 +74,7 @@ class Home extends Component {
       return (
         <div style={styles}>
            <Heading />
-           <Container width="100%" fixed disableGutters={true}> 
+           <Container width="100%" fixed disableGutters={true} paddingbottom={60} > 
            <SpacingGrid 
            countryObject={this.state.countryObject} 
            covid={this.state.covid} 
@@ -89,6 +89,7 @@ class Home extends Component {
            /> 
            </Container>
            <GlobalStat stat={this.state.covid}/>
+           
         </div> 
         )
     }
