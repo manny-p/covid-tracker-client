@@ -15,6 +15,7 @@ class Home extends Component {
         global: [],
         continent: [],
         type: 'default',
+        error: false
     }
 
     handleChange = (e) => {
@@ -26,8 +27,8 @@ class Home extends Component {
         e.preventDefault()
         CovidModel.getCountry(this.state.country)
         .then(data => {
-        this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}})
-        })
+        this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}, error: false})
+        }).catch(err => this.setState({error: true}))
     }
 
     handleMouseHover = (type) => {
@@ -59,6 +60,7 @@ class Home extends Component {
     }
 
     render() {
+        
         // console.log(this.state.covid)
         console.log("Line 58 STATS")
         console.log(this.state.stats)
@@ -86,6 +88,7 @@ class Home extends Component {
            handleChange={this.handleChange} 
            handleSubmit={this.handleSubmit}
            handleMouseHover={this.handleMouseHover}
+           error={this.state.error}
            /> 
            </Container>
            <GlobalStat stat={this.state.covid}/>
