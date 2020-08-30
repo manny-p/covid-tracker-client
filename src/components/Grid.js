@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Paper} from '@material-ui/core/';
 import Map from './/Map/Map'
 import SideBar from ".//SideBar/SideBar"
-import LeftSideBars from "./leftSideBars/LeftSideBars"
 import SearchInput from "../components/SearchInput/SearchInput"
 import LeftSideBarsTest from "./leftSideBars/LeftSideBarsTest"
 import classes from "./leftSideBars/LeftSideBars.module.css" 
@@ -27,7 +26,7 @@ function SpacingGrid(props) {
         <Grid container={true}   height='100%' margin-bottom=''  align-content="center" flex-wrap="wrap" flex-direction="column-reverse" spacing={2} >
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
             <div style={styles}>
-            <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country}/>
+            <SearchInput handleChange={props.handleChange} handleSubmit={props.handleSubmit} country={props.country} error={props.error}/>
             </div>
             </Grid>
             <Grid item xl={2} lg={2} md={2} sm={3} xs={12}>
