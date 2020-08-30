@@ -1,8 +1,9 @@
-import React, {useState} from "react"
+import React, {useContext, useState, useEffect} from "react"
 import useGlobalState from "../state";
 import {Link} from "react-router-dom";
 import "./auth.css";
-
+import {Context} from '../store'
+import useCountries from '../hooks/useCountry.js'
 const styles = {
     backgroundColor: "black",
     position: "relative",
@@ -14,24 +15,28 @@ const styles = {
 }
 
 export default ({history}) => {
-
+    const {setUser, setToken, setCountries, user, setLoading} = useContext(Context)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    
     // global state
-    const [, setUser] = useGlobalState("user")
-    const [, setToken] = useGlobalState("token")
-
+    // const [, setUser] = useGlobalState("user")
+    // const [, setToken] = useGlobalState("token")
+    
     const handleEmail = e => setEmail(e.target.value)
     // console.log(handleEmail)
-
+    
     const handlePassword = e => setPassword(e.target.value)
     // console.log(handlePassword)
 
+    
     const handleSubmit = async (e) => {
-
+        
         try {
             const url = "http://localhost:4000/users/login"
+
+            
             // stop form reloading aka browser default behavior
             e.preventDefault()
 
@@ -50,10 +55,11 @@ export default ({history}) => {
 
             // higher order function
             // take the initial value of token and modify it
-            setToken(() => fetchData.token)
+            console.log(fetchData);
+            setToken(fetchData.token)
             console.log(`Token: ${fetchData.token}`)
-
-            setUser(() => fetchData.user)
+            setCountries(user.countries)
+            setUser(fetchData.user)
             console.log(`User ${fetchData.user}`)
 
             history.push("/")

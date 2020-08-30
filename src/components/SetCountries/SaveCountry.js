@@ -1,14 +1,18 @@
-import React from "react"
+import React, {useContext} from "react"
 import useGlobalState from "../../state"
-import useFetch from "./useFetch"
+import {Context} from '../../store'
 
 // pass in country prop from sidebar
 export default ({country}) => {
 
-    // get user
-    const [, setUser] = useGlobalState('user')
-    // get user token
-    const [token] = useGlobalState('token')
+ const { token} = useContext(Context)
+// const [loading, data, error] = useCountries("http://localhost:4000/users", token )
+
+
+    // // get user
+    // const [, setUser] = useGlobalState('user')
+    // // get user token
+    // const [token] = useGlobalState('token')
 
     // user clicks button and fires event handler that initiates server communication
     const HandleSave = async () => {
@@ -29,10 +33,9 @@ export default ({country}) => {
             })
 
             // save data from results
-            const saveData = await results.json()
+            // const saveData = await results.json()
 
         // update global user object with the saveDate
-            setUser(()=> saveData)
 
         } catch(error) {
             alert(error.message)
