@@ -1,10 +1,10 @@
 import React, {useState} from "react"
-import useGlobalState from "../state";
-import {Link} from "react-router-dom";
+import useGlobalState from "../../state"
+import {Link} from "react-router-dom"
 import "./auth.css";
 
 const styles = {
-    backgroundColor: "black",
+    backgroundColor: 'rgb(66, 101, 138)',
     position: "relative",
     minHeight: "100vh",
     display: "flex",
@@ -19,19 +19,18 @@ export default ({history}) => {
     const [password, setPassword] = useState("")
 
     // global state
-    const [, setUser] = useGlobalState("user")
     const [, setToken] = useGlobalState("token")
+    const [, setUser] = useGlobalState("user")
 
     const handleEmail = e => setEmail(e.target.value)
-    // console.log(handleEmail)
 
     const handlePassword = e => setPassword(e.target.value)
-    // console.log(handlePassword)
 
     const handleSubmit = async (e) => {
 
         try {
-            const url = "http://localhost:4000/users/login"
+            const url = "http://localhost:4000/users/register"
+
             // stop form reloading aka browser default behavior
             e.preventDefault()
 
@@ -45,16 +44,16 @@ export default ({history}) => {
                 body: JSON.stringify({email, password}),
             })
 
-            // parse the token
-            const fetchData = await results.json();
+            // parse the token, save data
+            const saveData = await results.json()
 
             // higher order function
             // take the initial value of token and modify it
-            setToken(() => fetchData.token)
-            console.log(`Token: ${fetchData.token}`)
+            setToken(() => saveData.token)
+            // console.log(saveData.token)
 
-            setUser(() => fetchData.user)
-            console.log(`User ${fetchData.user}`)
+            setUser(() => saveData.user)
+            // console.log(saveData.user)
 
             history.push("/")
 
@@ -65,16 +64,17 @@ export default ({history}) => {
 
     return (
         <div style={styles}>
-            <div className='register'>
-                <form className="register-form" onSubmit={handleSubmit}>
-                    <label htmlFor='email'>Email</label>
-                    <input type="text" id='email' autoComplete="off" onChange={handleEmail}/>
-                    <label htmlFor='password'>Password</label>
-                    <input autoComplete="off" type="password" id='password' value={password} onChange={handlePassword}/>
-                    <button type='submit'>Login</button>
-                    <p className="message">Not registered? <Link to="/register">Create an account</Link></p>
-                </form>
-            </div>
+        <div className='register'>
+            <form className="redgister-form" onSubmit={handleSubmit}>
+                <label htmlFor='email'>Email</label>
+                <input type="text" id='email' autoComplete="off" onChange={handleEmail}/>
+                <label htmlFor='password'>Password</label>
+                <input autoComplete="off" type="password" id='password' value={password} onChange={handlePassword}/>
+                <button type='submit'>Sign Up</button>
+                <p className="message">Already registered? <Link to="/login"><span
+                    style={{color: "blue"}}>Sign In</span></Link></p>
+            </form>
+        </div>
         </div>
     )
 }

@@ -6,12 +6,15 @@ import {Link} from "react-router-dom";
 export default ({covid}) => {
     console.log(covid)
 
+    setTimeout(() => console.log("USERRRRR!!!!!!" + JSON.stringify(user, null, 2)), 300 )
+
     const [user] = useGlobalState("user")
 
     const query = covid
 
-    if (user) return <div className="CountriesList">{covid.filter(data => {
-        return user.countries.indexOf(data.country) !== -1
+    if (user) {return <div className="CountriesList">{covid.filter(data => {
+        console.log("Ceeeeeeeck" + JSON.stringify(user, null, 2))
+        return user.countries.indexOf(data.countries)
     }).map(record => {
 
         console.log("FUCK YOU QUERY", typeof (query), JSON.stringify(query, null, 2))
@@ -25,8 +28,10 @@ export default ({covid}) => {
             </div>
         )
     })}
-    </div>
-    if (!user) return <h3>Please <Link to="/Login">log in</Link> to save country</h3>
+    </div>} else {
+        return <h3>Please <Link to="/Login">log in</Link> to save country</h3>
+    }
+    // if (!user) return 
 }
 
 
