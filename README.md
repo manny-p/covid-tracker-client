@@ -2,6 +2,8 @@
 
 ![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.33.42%20AM.png)
 
+![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.11.16%20AM.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
