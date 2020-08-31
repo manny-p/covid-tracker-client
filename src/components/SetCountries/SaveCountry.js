@@ -14,7 +14,8 @@ export default ({country}) => {
         console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa ", countries)
         try {
 
-            const url = "http://localhost:4000/api/countries/save"
+            // const url = "http://localhost:4000/api/countries/save"
+            const url = "https://covid-tracker-api-sei.herokuapp.com/api/countries/save"
 
             // make a fetch post to send country to server with Bearer token
 

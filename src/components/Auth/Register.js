@@ -34,7 +34,8 @@ export default ({history}) => {
     const handleSubmit = async (e) => {
 
         try {
-            const url = "http://localhost:4000/users/register"
+            // const url = "http://localhost:4000/users/register"
+            const url = "https://covid-tracker-api-sei.herokuapp.com/users/register"
 
             // stop form reloading aka browser default behavior
             e.preventDefault()

@@ -6,8 +6,9 @@ export default ({ children }) => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
     const [countries, setCountries] = useState([]);
-    const [loading, setLoading] = useState(true)
-    const initialState = {
+    const [loading, setLoading] = useState(true);
+    const [modalHide, setModalHide] = useState(true) 
+     const initialState = {
         user,
         setUser,
         token,
@@ -15,7 +16,9 @@ export default ({ children }) => {
         countries,
         setCountries,
         loading,
-        setLoading
+        setLoading,
+        modalHide,
+        setModalHide
     }
 return (
   <Context.Provider value={initialState}>{children}</Context.Provider>
