@@ -4,6 +4,8 @@ The Covid-Tracker offers a snapshot of the statistics for countries all over the
 
 Type the country in the search bar and get a closer view on country statistics by saving the country on the dashboard or your own tracking.
 
+The data is utilized from https://corona.lmao.ninja/docs/#/ 
+
 
 
 ![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.14.14%20AM.png)
