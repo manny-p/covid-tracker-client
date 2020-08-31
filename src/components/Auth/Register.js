@@ -1,10 +1,5 @@
-<<<<<<< HEAD:src/Home-Login/Register.js
 import React, {useState, useContext, useRef} from "react"
-import {Context} from "../store"
-=======
-import React, {useState} from "react"
-import useGlobalState from "../../state"
->>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Register.js
+import {Context} from "../../store"
 import {Link} from "react-router-dom"
 import "./auth.css";
 
@@ -87,12 +82,7 @@ export default ({history}) => {
                 <label htmlFor='email'>Email</label>
                 <input type="text" id='email' ref={emailCheck} autoComplete="off" onChange={handleEmail}/>
                 <label htmlFor='password'>Password</label>
-<<<<<<< HEAD:src/Home-Login/Register.js
                 <input autoComplete="off" type="password" id='password' value={password} ref={passwordCheck} onChange={handlePassword}/>
-
-=======
-                <input autoComplete="off" type="password" id='password' value={password} onChange={handlePassword}/>
->>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Register.js
                 <button type='submit'>Sign Up</button>
                 <p className="message">Already registered? <Link to="/login"><span
                     style={{color: "blue"}}>Sign In</span></Link></p>

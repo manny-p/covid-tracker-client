@@ -32,10 +32,10 @@ export default (props) => {
     }
 
 
-    useEffect(() => {
-        countriesList()
-    }, [])
-    const isShown = () => {
+    // useEffect(() => {
+    //     countriesList()
+    // }, [])
+    // const isShown = () => {
 
         // useEffect(() => {
         //     countriesList()
@@ -89,7 +89,7 @@ export default (props) => {
             </div>
         )
     }
-}
+
 
 
 

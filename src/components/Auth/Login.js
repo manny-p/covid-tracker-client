@@ -1,13 +1,7 @@
-<<<<<<< HEAD:src/Home-Login/Login.js
 import React, {useContext, useState} from "react"
-
-=======
-import React, {useState} from "react"
-import useGlobalState from "../../state";
->>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Login.js
 import {Link} from "react-router-dom";
 import "./auth.css";
-import {Context} from '../store'
+import {Context} from '../../store.js'
 
 const styles = {
     backgroundColor: 'rgb(66, 101, 138)',
@@ -19,13 +13,9 @@ const styles = {
     justifyContent: "space-between",
 }
 
-<<<<<<< HEAD:src/Home-Login/Login.js
 export default ({history}) => {
     const {setUser, setToken, setCountries} = useContext(Context)
-=======
-export default  ({history}) => {
 
->>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Login.js
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 

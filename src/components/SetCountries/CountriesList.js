@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react"
+import React, {useContext} from "react"
 import useCountry from "../../hooks/useCountry"
 import {Context} from "../../store"
 
