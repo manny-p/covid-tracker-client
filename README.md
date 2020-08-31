@@ -6,6 +6,9 @@
 
 ![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.12.02%20AM.png)
 
+
+You can find our work here ---> https://covid-tracker-sei-629.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
