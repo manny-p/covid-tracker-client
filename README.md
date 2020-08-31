@@ -1,3 +1,11 @@
+
+# Covid-Tracker
+The Covid-Tracker offers a snapshot of the statisticks for countries all over the world. Hover over the ‘cases’, ‘deaths’ and ‘recovered’ to get more detailed  geographic breakdown at the county level. 
+
+Type the country in search bar and get closer view on country statistics by saving the country on the dashboard or your own tracking. 
+
+
+
 ![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.14.14%20AM.png)
 
 ![alt text](https://github.com/manny-p/covid-tracker-client/blob/master/Screen%20Shot%202020-08-31%20at%209.33.42%20AM.png)
