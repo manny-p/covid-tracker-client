@@ -5,7 +5,7 @@ export const Context = createContext();
 export default ({ children }) => {
     const [user, setUser] = useState({});
     const [token, setToken] = useState(null);
-    const [countries, setCountries] = useState(null);
+    const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true)
     const initialState = {
         user,

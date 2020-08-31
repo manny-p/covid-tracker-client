@@ -1,16 +1,21 @@
-import React, {useState} from "react"
-import useGlobalState from "../state"
+import React, {useState, useContext, useRef} from "react"
+import {Context} from "../store"
 import {Link} from "react-router-dom"
 import "./auth.css";
 
 export default ({history}) => {
 
+    const passwordCheck = useRef(null)
+    const emailCheck = useRef(null)
+
+    const {setUser, setToken} = useContext(Context)
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     // global state
-    const [, setToken] = useGlobalState("token")
-    const [, setUser] = useGlobalState("user")
+    // const [, setToken] = useGlobalState("token")
+    // const [, setUser] = useGlobalState("user")
 
     const handleEmail = e => setEmail(e.target.value)
 
@@ -25,6 +30,14 @@ export default ({history}) => {
             e.preventDefault()
 
             // fetch request (backend)
+
+            // if  (password.length < 5) {
+            //     passwordCheck.current.value = ''
+            //     emailCheck.current.value = ''
+            // }
+
+
+
             const results = await fetch(url, {
                 // fetch options
                 method: "POST",
@@ -34,17 +47,17 @@ export default ({history}) => {
                 body: JSON.stringify({email, password}),
             })
 
+
             // parse the token, save data
             const saveData = await results.json()
 
             // higher order function
             // take the initial value of token and modify it
-            setToken(() => saveData.token)
+            setToken(saveData.token)
             // console.log(saveData.token)
 
-            setUser(() => saveData.user)
-            // console.log(saveData.user)
-
+            setUser(saveData.user)
+            console.log(JSON.stringify(saveData.user,null, 2))
             history.push("/")
 
         } catch (err) {
@@ -56,9 +69,9 @@ export default ({history}) => {
         <div className='login'>
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor='email'>Email</label>
-                <input type="text" id='email' autoComplete="off" onChange={handleEmail}/>
+                <input type="text" id='email' ref={emailCheck} autoComplete="off" onChange={handleEmail}/>
                 <label htmlFor='password'>Password</label>
-                <input autoComplete="off" type="password" id='password' value={password} onChange={handlePassword}/>
+                <input autoComplete="off" type="password" id='password' value={password} ref={passwordCheck} onChange={handlePassword}/>
 
                 <button type='submit'>Sign Up</button>
                 <p className="message">Already registered? <Link to="/login"><span

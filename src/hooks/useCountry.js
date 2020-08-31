@@ -7,32 +7,28 @@ export default (url="", email="", password ="") => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const {token, setUser, user} = useContext(Context);
+    
     useEffect(() => {
-
-        const useFetch = async () => {
+       const useFetch = async () => {
+      
             setLoading(true)
             const results = await fetch(url, {
-                // fetch options
-                method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer" + token
+                    "Authorization": "Bearer " + token
                 },
-                body: JSON.stringify({email, password}),
             }).catch(err => setError(err))
-            const fetchData = await results.json();
-            setData(fetchData.user.countries);
-            setUser(fetchData.user)
+            const fetchResults = await results.json();
+            setData(fetchResults.user.countries);
+            setUser(fetchResults.user)
+            console.log("Check FUCKIN USER", user)
             setLoading(false)
-
-        }
-
-        useFetch()
+    }
+         useFetch()
 
         // parse the token
-    },[data, loading, error])
+    },[token, url])
 
-    return [loading, data, user, error]
+    return [loading, user, data, error]
 }
 
 
