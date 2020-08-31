@@ -26,7 +26,7 @@ export default (url="", email="", password ="") => {
          useFetch()
 
         // parse the token
-    },[token, url])
+    },[])
 
     return [loading, user, data, error]
 }

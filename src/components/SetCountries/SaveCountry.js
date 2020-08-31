@@ -4,7 +4,7 @@ import {Context} from '../../store'
 // pass in country prop from sidebar
 export default ({country}) => {
 
- const { token} = useContext(Context)
+ const { token, setUser} = useContext(Context)
 // const [loading, data, error] = useCountries("http://localhost:4000/users", token )
 
 
@@ -18,7 +18,7 @@ export default ({country}) => {
 
             // make a fetch post to send country to server with Bearer token
             
-            await fetch(url, {
+            const results = await fetch(url, {
                 // fetch options
                 method: "POST",
                 headers: {
@@ -32,7 +32,8 @@ export default ({country}) => {
             // const saveData = await results.json()
 
         // update global user object with the saveDate
-
+        const resultsData = await results.json()
+        setUser(resultsData);
         } catch(error) {
             alert(error.message)
         }
