@@ -22,8 +22,15 @@ You can find our work here ---> https://covid-tracker-sei-629.herokuapp.com/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technologies used 
-
+`Express`
+`Node.js`
+`Mongoose`
+`MongoDB`
+`Google Maps API`
+`CSS`
+`HTML`
 `google-maps-react`
+`Jason Web Token`
 
 
 ## Available Scripts
