@@ -1,18 +1,20 @@
 import './CSS/Header.css'
 import React from 'react';
 import { Link } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { viruses } from '@fortawesome/free-solid-svg-icons'
 
  function Header() {
-
+        
         return (
             <div className="flex-container">
-            <h1 className='logo'>
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpyBMwlQv6QqW9EpWKcDRERI2hcXX8_33bvftejVbzMPvtY6Yw&s"></img> </h1>
+            <a href="/" className='logo'>
+            <i class="fad fa-viruses fa-4x"></i>
+            </a>
               <ul className="navigation">
-                <li><button Link to={'/login'}>Login</button></li>
-                <li><button href="/profile">Profile</button></li>
-                <li><button href="/register">Sign Up</button></li>
+              <li><Link to={'/login'}>Login</Link></li>
+              <li><Link to={'/register'}>Sign Up</Link></li>
+              {/* <li><Link to={'/profile'}>Profile</Link></li> */}
               </ul>
             </div>
         )

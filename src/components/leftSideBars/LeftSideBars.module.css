@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+.Categories {
+  display: flex;
+  width: 10rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 700px;
+  border-top-left-radius: .5rem;
+}
+
+.CatagoryListItem1 {
+  width: 10rem;
+  height: 10rem;
+  background-color: #D7E1EA;
+  border-radius: 1rem;
+  font-size: .8rem;
+  color: black;
+  transition: all .3s ease-in;
+}
+
+.CatagoryListItem1:hover {
+  box-shadow: 7px 7px 5px rgb(64, 65, 66);
+
+}
+
+.Text1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Text1 h1 {
+  transition: all .5s ease-in;
+}
+.Text1 span {
+  transition: all .5s ease-in;
+}
+
+.Text1:hover h1 {
+  transform: translateY(-7px);
+}
+
+.Text1:hover span {
+  transform: translateY(7px);
+}
+
+@media only screen and (max-width: 700px) {
+  .CatagoryListItem1, .CatagoryListItem2, .CatagoryListItem3 {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 1rem;
+    font-size: 1.5rem; 
+  }
+
+.CatagoryListItem1 h1, .CatagoryListItem2 h1, .CatagoryListItem3 h1 {
+    font-size: .9rem;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .Categories{
+    flex-direction: row;
+    width: auto;
+    justify-content: space-evenly;
+    height: 10rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .Categories{
+    display: flex;
+    width: 8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 700px;
+  }
+}

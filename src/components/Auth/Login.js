@@ -1,11 +1,16 @@
+<<<<<<< HEAD:src/Home-Login/Login.js
 import React, {useContext, useState} from "react"
 
+=======
+import React, {useState} from "react"
+import useGlobalState from "../../state";
+>>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Login.js
 import {Link} from "react-router-dom";
 import "./auth.css";
 import {Context} from '../store'
 
 const styles = {
-    backgroundColor: "black",
+    backgroundColor: 'rgb(66, 101, 138)',
     position: "relative",
     minHeight: "100vh",
     display: "flex",
@@ -14,8 +19,13 @@ const styles = {
     justifyContent: "space-between",
 }
 
+<<<<<<< HEAD:src/Home-Login/Login.js
 export default ({history}) => {
     const {setUser, setToken, setCountries} = useContext(Context)
+=======
+export default  ({history}) => {
+
+>>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Login.js
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -72,8 +82,8 @@ export default ({history}) => {
 
     return (
         <div style={styles}>
-            <div className='register'>
-                <form className="register-form" onSubmit={handleSubmit}>
+            <div className='login'>
+                <form className="login-form" onSubmit={handleSubmit}>
                     <label htmlFor='email'>Email</label>
                     <input type="text" id='email' autoComplete="off" onChange={handleEmail}/>
                     <label htmlFor='password'>Password</label>

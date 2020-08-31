@@ -2,31 +2,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Fira Sans"
+    font-family: 'Rubik', sans-serif;
 
   }
 
 .SideBar {
     display: flex;
     /* position: absolute; */
-    top: 0;
-    right: 0;
+    /* top: 0;
+    right: 0; */
     flex-direction: column;
-    align-content: flex-end;
+    align-items: center;
     justify-content: space-around;
     /* height: calc(100vh - 56px); */
     height: 700px;
     /* width: 20rem; */
-    background-color: white;
+    background-color: #D7E1EA;
+    border-radius: .5rem;
+}
+
+.Section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .Section1 h1{
-    text-align: center; 
+    text-align: center;
 }
 
 .Section1Title {
     display: flex;
-    justify-content: space-around;   
+    justify-content: space-around; 
+    width: 100%;  
 }
 
 .Section1Stat p {
@@ -35,21 +44,19 @@
 
 .Section2 {
     text-align: center;
+    width: 100%;
 }
 
 
 .Section2Title , .Section2Stat  {
     display: flex;
-    
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: flex-start;
 
 }
 
 
-.Section2Stat p {
-    text-align: center;
-}
 
 .Section3 {
     text-align: center;
@@ -70,9 +77,25 @@
 }
 
 .D {
-    color: crimson;
+    color: #A3000B;
 }
 
 .R {
-    color: green;
+    color: #519839;
 }
+
+.Button {
+    color: white;
+    margin: 1rem;
+    border-radius: .5rem;
+    background-color: #547DA0;
+}
+
+@media only screen and (max-width: 960px) {
+
+    .Section1, .Section2, .Section3 {
+        font-size: 1rem;
+    }
+  }
+
+

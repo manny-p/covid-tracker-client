@@ -1,7 +1,22 @@
+<<<<<<< HEAD:src/Home-Login/Register.js
 import React, {useState, useContext, useRef} from "react"
 import {Context} from "../store"
+=======
+import React, {useState} from "react"
+import useGlobalState from "../../state"
+>>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Register.js
 import {Link} from "react-router-dom"
 import "./auth.css";
+
+const styles = {
+    backgroundColor: 'rgb(66, 101, 138)',
+    position: "relative",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+}
 
 export default ({history}) => {
 
@@ -66,17 +81,23 @@ export default ({history}) => {
     }
 
     return (
-        <div className='login'>
-            <form className="login-form" onSubmit={handleSubmit}>
+        <div style={styles}>
+        <div className='register'>
+            <form className="redgister-form" onSubmit={handleSubmit}>
                 <label htmlFor='email'>Email</label>
                 <input type="text" id='email' ref={emailCheck} autoComplete="off" onChange={handleEmail}/>
                 <label htmlFor='password'>Password</label>
+<<<<<<< HEAD:src/Home-Login/Register.js
                 <input autoComplete="off" type="password" id='password' value={password} ref={passwordCheck} onChange={handlePassword}/>
 
+=======
+                <input autoComplete="off" type="password" id='password' value={password} onChange={handlePassword}/>
+>>>>>>> b4c38670da32caf76b04f45b1447992b61ea7b49:src/components/Auth/Register.js
                 <button type='submit'>Sign Up</button>
                 <p className="message">Already registered? <Link to="/login"><span
                     style={{color: "blue"}}>Sign In</span></Link></p>
             </form>
+        </div>
         </div>
     )
 }

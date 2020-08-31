@@ -3,7 +3,6 @@ import Heading from '../Heading/Heading';
 import CovidModel from "../models/covid"
 import Container from '@material-ui/core/Container';
 import SpacingGrid from '../components/Grid';
-import SearchInput from "../components/SearchInput/SearchInput"
 import GlobalStat from "../components/GlobalStat/GlobalStat"
 
 
@@ -12,9 +11,12 @@ class Home extends Component {
         covid: [],
         country: "",
         countryObject: {},
-        global: []
+        center: {},
+        global: [],
+        continent: [],
+        type: 'default',
+        error: false
     }
-    
 
     handleChange = (e) => {
         e.preventDefault()
@@ -25,46 +27,74 @@ class Home extends Component {
         e.preventDefault()
         CovidModel.getCountry(this.state.country)
         .then(data => {
-            console.log(data)
-            this.setState({countryObject: data})
-        })
+        this.setState({countryObject: data, center: {lat: parseInt(data.countryInfo.lat), lng: parseInt(data.countryInfo.long)}, error: false})
+        }).catch(err => this.setState({error: true}))
     }
 
+    handleMouseHover = (type) => {
+        console.log("Hover Target " , type)
+        this.setState({type: type , hover: !null })
+    }
+    
     componentDidMount() {
         this.fetchData()
+        this.fetchNewData()
+        this.fetchContinentData()
     }
 
     fetchData = () => {
         CovidModel.all().then(data => {
-            this.setState({covid: data})
-            console.log('line 20 Home.js')
-            console.log(data)
-            
-        })
+            this.setState({covid: data})  
+        })   
     }
-    
+    fetchNewData = () => {
+        CovidModel.global().then(data => {
+            this.setState({global: data})
+        })   
+    }
+
+    fetchContinentData = () => {
+        CovidModel.continent().then(data => {
+            this.setState({continent: data})
+        })   
+    }
 
     render() {
-        console.log(this.state.covid)
+        
+        // console.log(this.state.covid)
+        console.log("Line 58 STATS")
+        console.log(this.state.stats)
         const styles = {
-            backgroundColor: "#16161A", 
+            backgroundColor: "#42658A", 
             position: "relative", 
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "space-between",
-            
+            justifyContent: "space-between",    
         }
-
+        
       return (
         <div style={styles}>
-          <Heading />
-          <GlobalStat stat={this.state.covid}/>
-          <SearchInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} country={this.state.country}/>
-           <Container maxWidth="xl" fixed disableGutters={true}> 
-           <SpacingGrid countryObject={this.state.countryObject} covid={this.state.covid}/> 
-            </Container>
-                </div> )
+           <Heading />
+           <Container width="100%" fixed disableGutters={true} paddingbottom={60} > 
+           <SpacingGrid 
+           countryObject={this.state.countryObject} 
+           covid={this.state.covid} 
+           center={this.state.center} 
+           global={this.state.global} 
+           continent={this.state.continent} 
+           type={this.state.type}
+           hover={this.state.hover}
+           handleChange={this.handleChange} 
+           handleSubmit={this.handleSubmit}
+           handleMouseHover={this.handleMouseHover}
+           error={this.state.error}
+           /> 
+           </Container>
+           <GlobalStat stat={this.state.covid}/>
+           
+        </div> 
+        )
     }
 }
 
