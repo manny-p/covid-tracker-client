@@ -15,7 +15,7 @@ import Modal from "./modal/Modal"
      const [show, setShow] = useState(false)
      const [countries, setCountries] = useState([])
      const info = props.covid.filter(i => {
-        return i.cases > 1000000
+        return i.cases > 4000000
      }).map(i => {
          return (<Top3
          country={i.country}
